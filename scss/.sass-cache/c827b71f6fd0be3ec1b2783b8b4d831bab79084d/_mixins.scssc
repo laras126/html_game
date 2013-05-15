@@ -1,0 +1,629 @@
+3.2.6 (Media Mark)
+485b6424fab2d47da1bc441240da12b04c6aa2af
+o:Sass::Tree::RootNode
+:@template"É#/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Mixins & Constants Stylesheet
+
+This is where you can take advantage of Sass' great features:
+Mixins & Constants. I won't go in-depth on how they work exactly,
+there are a few articles below that will help do that. What I will
+tell you is that this will help speed up simple changes like
+changing a color or adding CSS3 techniques like box shadow and
+border-radius.
+
+A WORD OF WARNING: It's very easy to overdo it here. Be careful and
+remember less is more.
+
+******************************************************************/
+
+/*********************
+CLEARFIXIN'
+*********************/
+
+// Contain floats: nicolasgallagher.com/micro-clearfix-hack/
+.clearfix {
+  zoom: 1;
+	&:before, &:after { content: ""; display: table; }
+	&:after { clear: both; }
+}
+
+/*********************
+TOOLS
+*********************/
+
+// BORDER-BOX ALL THE THINGS! (http://paulirish.com/2012/box-sizing-border-box-ftw/)
+* { 
+	-webkit-box-sizing: border-box; 
+	-moz-box-sizing:    border-box; 
+	box-sizing:         border-box; 
+}
+
+// http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/ 
+.image-replacement {
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+
+/*********************
+COLORS
+Need help w/ choosing your colors? Try this site out:
+http://0to255.com/
+*********************/
+
+$alert-yellow:      #ebe16f;
+$alert-red:         #fbe3e4;
+$alert-green:       #e6efc2;
+$alert-blue:        #d5edf8;
+
+$black:             #000;
+$white:             #fff;
+
+$bones-pink:        #f01d4f;
+$bones-blue:        #1990db;
+
+$box-color-des: desaturate($bones-blue, 10%);
+$box-color: lighten($box-color-des, 30%);
+
+$link-color:        $bones-pink;
+$link-hover:        darken($link-color, 9%);
+
+/*
+Here's a great tutorial on how to
+use color variables properly:
+http://sachagreif.com/sass-color-variables/
+*/
+
+
+/*********************
+TYPOGRAPHY
+*********************/
+
+// Serif and sans serif font variants. I usually have 3 fonts, each of those and a display or script font
+
+$sans-serif:        "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$sans-serif-light:  "OpenSansLight", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$sans-serif-italic:	"OpenSansItalic", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$sans-serif-light-italic:	
+					"OpenSansLightItalic", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$sans-serif-bold:	"OpenSansBold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$sans-serif-semibold:	"OpenSansSemiBold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$sans-serif-bold-italic:	"OpenSansBoldItalic", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+$serif:             "DroidSerifRegular", Cambria, Times New Roman, Times, serif;
+$serif-italic:      "DroidSerifItalic", Cambria, Times New Roman, Times, serif;
+$serif-bold:      	"DroidSerifBold", Cambria, Times New Roman, Times, serif;
+$serif-bold-italic:      "DroidSerifBoldItalic", Cambria, Times New Roman, Times, serif;
+
+$script:            "", Cambria, Times New Roman, Times, serif;
+
+// This would be an h1 font or something
+$display:            "", Cambria, Times New Roman, Times, serif;
+
+
+
+// Use font variants instead of font-weight/style
+
+$em: $sans-serif-italic;
+$strong: $sans-serif-bold;
+
+
+/* 	To embed your own fonts, use this syntax
+	and place your fonts inside the
+	library/fonts folder. For more information
+	on embedding fonts, go to:
+	http://www.fontsquirrel.com/
+	Be sure to remove the comment brackets.
+*/
+
+// LARA TODO: incorporate this -
+// http://www.alistapart.com/articles/say-no-to-faux-bold/
+
+/*	@font-face {
+    	font-family: 'Font Name';
+    	src: url('library/fonts/font-name.eot');
+    	src: url('library/fonts/font-name.eot?#iefix') format('embedded-opentype'),
+             url('library/fonts/font-name.woff') format('woff'),
+             url('library/fonts/font-name.ttf') format('truetype'),
+             url('library/fonts/font-name.svg#font-name') format('svg');
+    	font-weight: normal;
+    	font-style: normal;
+	}
+*/
+
+// LARA: Instead I am just adding the styles in there to this.
+// Fonts
+@import "../fonts/Droid-Serif-fontfacekit/stylesheet.css";
+@import "../fonts/Open-Sans/stylesheet.css";
+@import "../fonts/Font-Awesome/css/font-awesome.css";
+
+/*
+use the best ampersand
+http://simplebits.com/notebook/2008/08/14/ampersands-2/
+*/
+span.amp {
+  font-family: Baskerville,'Goudy Old Style',Palatino,'Book Antiqua',serif !important;
+  font-style: italic;
+}
+
+// text alignment 
+.text-left   { text-align: left; }
+.text-center { text-align: center; }
+.text-right  { text-align: right; }
+
+
+// alerts and notices
+%alert {
+	margin: 10px;
+	padding: 5px 18px;
+	border: 1px solid;
+}
+
+.alert-help {
+	@extend %alert;
+	border-color: darken($alert-yellow, 5%);
+	background: $alert-yellow;
+}
+
+.alert-info {
+	@extend %alert;
+	border-color: darken($alert-blue, 5%);
+	background: $alert-blue;
+}
+
+.alert-error {
+	@extend %alert;
+	border-color: darken($alert-red, 5%);
+	background: $alert-red;
+}
+
+.alert-success {
+	@extend %alert;
+	border-color: darken($alert-green, 5%);
+	background: $alert-green;
+}
+
+/*********************
+BORDER RADIUS
+*********************/
+
+/*
+I totally rewrote this to be cleaner and easier to use.
+You'll need to be using Sass 3.2+ for these to work.
+Thanks to @anthonyshort for the inspiration on these.
+USAGE: @include border-radius(4px 4px 0 0);
+*/
+
+@mixin border-radius($radius) {
+	// defining prefixes so we can use them in mixins below
+	$prefixes:      ("-webkit", "-moz", "-ms", "-o",  "");
+  @each $prefix in $prefixes {
+    #{$prefix}-border-radius: $radius;
+  }
+
+  border-radius: $radius;
+}
+
+/*********************
+TRANISTION
+*********************/
+
+/*
+I totally rewrote this to be cleaner and easier to use.
+You'll need to be using Sass 3.2+ for these to work.
+Thanks to @anthonyshort for the inspiration on these.
+USAGE: @include transition(all 0.2s ease-in-out);
+*/
+
+@mixin transition($transition) {
+	// defining prefixes so we can use them in mixins below
+	$prefixes:      ("-webkit", "-moz", "-ms", "-o",  "");
+  @each $prefix in $prefixes {
+    #{$prefix}-transition: $transition;
+  }
+
+  transition: $transition;
+}
+
+
+/*********************
+BOX SHADOWS
+*********************/
+
+/*
+I totally rewrote this to be cleaner and easier to use.
+You'll need to be using Sass 3.2+ for these to work.
+Thanks to @anthonyshort for the inspiration on these.
+USAGE: @include box-shadow(inset 0 0 4px rgba(0,0,0,0.22));
+*/
+
+@mixin box-shadow($shadow) {
+	// defining prefixes so we can use them in mixins below
+	$prefixes:      ("-webkit", "-moz", "-ms", "-o",  "");
+  @each $prefix in $prefixes {
+    #{$prefix}-box-shadow: $shadow;
+  }
+
+  box-shadow: $shadow;
+}
+
+
+/*********************
+CSS3 GRADIENTS
+Be careful with these since they can
+really slow down your CSS. Don't overdue it.
+*********************/
+
+/* @include css-gradient(#dfdfdf,#f8f8f8); */
+@mixin css-gradient($from: #dfdfdf, $to: #f8f8f8) {
+	background-color: $to;
+	background-image: -webkit-gradient(linear, left top, left bottom, from($from), to($to));
+	background-image: -webkit-linear-gradient(top, $from, $to);
+	background-image: -moz-linear-gradient(top, $from, $to);
+	background-image: -o-linear-gradient(top, $from, $to);
+	background-image: linear-gradient(to bottom, $from, $to);
+}
+
+/*********************
+BOX SIZING
+*********************/
+
+/* @include box-sizing(border-box); */
+/* NOTE: value of "padding-box" is only supported in Gecko. So
+probably best not to use it. I mean, were you going to anyway? */
+@mixin box-sizing($type: border-box) {
+	-webkit-box-sizing: $type;
+	-moz-box-sizing:    $type;
+	-ms-box-sizing:     $type;
+	box-sizing:         $type;
+}
+
+
+/*********************
+BUTTONS
+*********************/
+
+.button, .button:visited {
+	font-family: $sans-serif;
+	border: 1px solid darken($link-color, 13%);
+	border-top-color: darken($link-color, 7%);
+	border-left-color: darken($link-color, 7%);
+	padding: 4px 12px;
+	color: $white;
+	display: inline-block;
+	font-size: 11px;
+	font-weight: bold;
+	text-decoration: none;
+	text-shadow: 0 1px rgba(0,0,0, .75);
+	cursor: pointer;
+	margin-bottom: 20px;
+	line-height: 21px;
+	@include border-radius(4px);
+	@include css-gradient($link-color, darken($link-color, 5%));
+
+
+	&:hover, &:focus {
+		color: $white;
+	  	border: 1px solid darken($link-color, 13%);
+	  	border-top-color: darken($link-color, 20%);
+	 	border-left-color: darken($link-color, 20%);
+		@include css-gradient(darken($link-color, 5%), darken($link-color, 10%));
+	}
+
+	&:active {
+		@include css-gradient(darken($link-color, 5%), $link-color);
+	}
+}
+
+.blue-button, .blue-button:visited {
+	@extend .button;
+	border-color: darken($bones-blue, 10%);
+	text-shadow: 0 1px 1px darken($bones-blue, 10%);
+	@include css-gradient( $bones-blue, darken($bones-blue, 5%) );
+	@include box-shadow(inset 0 0 3px lighten($bones-blue, 16%));
+
+	&:hover, &:focus {
+		border-color: darken($bones-blue, 15%);
+		@include css-gradient( darken($bones-blue, 4%), darken($bones-blue, 10%) );
+	}
+	&:active {
+		@include css-gradient( darken($bones-blue, 5%), $bones-blue );
+	}
+}
+:@options{ :@has_childrenT:@children[Uo:Sass::Tree::CommentNode
+;@:@value["q/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Mixins & Constants Stylesheet
+
+This is where you can take advantage of Sass' great features:
+Mixins & Constants. I won't go in-depth on how they work exactly,
+there are a few articles below that will help do that. What I will
+tell you is that this will help speed up simple changes like
+changing a color or adding CSS3 techniques like box shadow and
+border-radius.
+
+A WORD OF WARNING: It's very easy to overdo it here. Be careful and
+remember less is more.
+
+******************************************************************/:
+@type:normal;	[ :
+@lineio;
+
+;@;[">/*********************
+CLEARFIXIN'
+*********************/;;;	[ ;io;
+
+;@;["D/* Contain floats: nicolasgallagher.com/micro-clearfix-hack/ */;:silent;	[ ;io:Sass::Tree::RuleNode:
+@tabsi ;@:
+@rule[".clearfix:@parsed_ruleso:"Sass::Selector::CommaSequence:@members[o:Sass::Selector::Sequence;[o:#Sass::Selector::SimpleSequence
+;[o:Sass::Selector::Class:
+@name["clearfix:@filename" ;i;@!:@sourceso:Set:
+@hash{ :@subject0;i;@!;i;T;	[o:Sass::Tree::PropNode;i ;@;["	zoom:@prop_syntax:new;o:Sass::Script::String;@;"1;:identifier;	[ ;io;;i ;@;["&:before, &:after;o;;[o;;[o;
+;[o:Sass::Selector::Parent;" ;io:Sass::Selector::Pseudo
+:	@arg0;["before;@5;:
+class;i;@5;o;;{ ;0;io;;[o;
+;[o;$;@5;io;%
+;&0;["
+after;@5;;';i;@5;o;;{ ;0;i;@5;i;T;	[o;;i ;@;["content; ;!;o;";@;""";;#;	[ ;io;;i ;@;["display; ;!;o;";@;"
+table;;#;	[ ;i;io;;i ;@;["&:after;o;;[o;;[o;
+;[o;$;" ;i o;%
+;&0;["
+after;@\;;';i ;@\;o;;{ ;0;i ;@\;i ;T;	[o;;i ;@;["
+clear; ;!;o;";@;"	both;;#;	[ ;i ;i ;io;
+
+;@;["8/*********************
+TOOLS
+*********************/;;;	[ ;i#o;
+
+;@;["\/* BORDER-BOX ALL THE THINGS! (http://paulirish.com/2012/box-sizing-border-box-ftw/) */;;;	[ ;i'o;;i ;@;["*;o;;[o;;[o;
+;[o:Sass::Selector::Universal;" ;i(:@namespace0;@{;o;;{ ;0;i(;@{;i(;T;	[o;;i ;@;["-webkit-box-sizing; ;!;o;";@;"border-box;;#;	[ ;i)o;;i ;@;["-moz-box-sizing; ;!;o;";@;"border-box;;#;	[ ;i*o;;i ;@;["box-sizing; ;!;o;";@;"border-box;;#;	[ ;i+;i(o;
+
+;@;["^/* http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/  */;;;	[ ;i.o;;i ;@;[".image-replacement;o;;[o;;[o;
+;[o;;["image-replacement;" ;i/;@ú;o;;{ ;0;i/;@ú;i/;T;	[o;;i ;@;["text-indent; ;!;o;";@;"	100%;;#;	[ ;i0o;;i ;@;["white-space; ;!;o;";@;"nowrap;;#;	[ ;i1o;;i ;@;["overflow; ;!;o;";@;"hidden;;#;	[ ;i2;i/o;
+
+;@;["}/*********************
+COLORS
+Need help w/ choosing your colors? Try this site out:
+http://0to255.com/
+*********************/;;;	[ ;i6o:Sass::Tree::VariableNode:@guarded0;@;"alert-yellow:
+@expro:Sass::Script::Color	;@:@attrs{	:rediÎ:
+alphai:
+greeni·:	blueit;0;i<;	[ ;i<o;*;+0;@;"alert-red;,o;-	;@;.{	;/i˚;0i;1i„;2i‰;0;i=;	[ ;i=o;*;+0;@;"alert-green;,o;-	;@;.{	;/iÊ;0i;1iÔ;2i¬;0;i>;	[ ;i>o;*;+0;@;"alert-blue;,o;-	;@;.{	;/i’;0i;1iÌ;2i¯;0;i?;	[ ;i?o;*;+0;@;"
+black;,o;-	;@;.{	;/i ;0i;1i ;2i ;0;iA;	[ ;iAo;*;+0;@;"
+white;,o;-	;@;.{	;/iˇ;0i;1iˇ;2iˇ;0;iB;	[ ;iBo;*;+0;@;"bones-pink;,o;-	;@;.{	;/i;0i;1i";2iT;0;iD;	[ ;iDo;*;+0;@;"bones-blue;,o;-	;@;.{	;/i;0i;1iê;2i€;0;iE;	[ ;iEo;*;+0;@;"box-color-des;,o:Sass::Script::Funcall:@keywords{ ;@;"desaturate:@splat0:
+@args[o:Sass::Script::Variable	;@;"bones-blue:@underscored_name"bones_blue;iGo:Sass::Script::Number:@denominator_units[ ;@:@numerator_units["%:@original"10%;i;iG;iG;	[ ;iGo;*;+0;@;"box-color;,o;3;4{ ;@;"lighten;50;6[o;7	;@;"box-color-des;8"box_color_des;iHo;9;:[ ;@;;["%;<"30%;i#;iH;iH;	[ ;iHo;*;+0;@;"link-color;,o;7	;@;"bones-pink;8"bones_pink;iJ;	[ ;iJo;*;+0;@;"link-hover;,o;3;4{ ;@;"darken;50;6[o;7	;@;"link-color;8"link_color;iKo;9;:[ ;@;;["%;<"9%;i;iK;iK;	[ ;iKo;
+
+;@;["v/*
+Here's a great tutorial on how to
+use color variables properly:
+http://sachagreif.com/sass-color-variables/
+*/;;;	[ ;iMo;
+
+;@;["=/*********************
+TYPOGRAPHY
+*********************/;;;	[ ;iTo;
+
+;@;["q/* Serif and sans serif font variants. I usually have 3 fonts, each of those and a display or script font */;;;	[ ;iXo;*;+0;@;"sans-serif;,o:Sass::Script::List	;@;[
+o;"	;@;"OpenSansRegular;:string;iZo;"	;@;"Helvetica Neue;;>;iZo;"	;@;"Helvetica;;#;iZo;"	;@;"
+Arial;;#;iZo;"	;@;"sans-serif;;#;iZ:@separator:
+comma;iZ;	[ ;iZo;*;+0;@;"sans-serif-light;,o;=	;@;[
+o;"	;@;"OpenSansLight;;>;i[o;"	;@;"Helvetica Neue;;>;i[o;"	;@;"Helvetica;;#;i[o;"	;@;"
+Arial;;#;i[o;"	;@;"sans-serif;;#;i[;?;@;i[;	[ ;i[o;*;+0;@;"sans-serif-italic;,o;=	;@;[
+o;"	;@;"OpenSansItalic;;>;i\o;"	;@;"Helvetica Neue;;>;i\o;"	;@;"Helvetica;;#;i\o;"	;@;"
+Arial;;#;i\o;"	;@;"sans-serif;;#;i\;?;@;i\;	[ ;i\o;*;+0;@;"sans-serif-light-italic;,o;=	;@;[
+o;"	;@;"OpenSansLightItalic;;>;i^o;"	;@;"Helvetica Neue;;>;i^o;"	;@;"Helvetica;;#;i^o;"	;@;"
+Arial;;#;i^o;"	;@;"sans-serif;;#;i^;?;@;i^;	[ ;i^o;*;+0;@;"sans-serif-bold;,o;=	;@;[
+o;"	;@;"OpenSansBold;;>;i_o;"	;@;"Helvetica Neue;;>;i_o;"	;@;"Helvetica;;#;i_o;"	;@;"
+Arial;;#;i_o;"	;@;"sans-serif;;#;i_;?;@;i_;	[ ;i_o;*;+0;@;"sans-serif-semibold;,o;=	;@;[
+o;"	;@;"OpenSansSemiBold;;>;i`o;"	;@;"Helvetica Neue;;>;i`o;"	;@;"Helvetica;;#;i`o;"	;@;"
+Arial;;#;i`o;"	;@;"sans-serif;;#;i`;?;@;i`;	[ ;i`o;*;+0;@;"sans-serif-bold-italic;,o;=	;@;[
+o;"	;@;"OpenSansBoldItalic;;>;iao;"	;@;"Helvetica Neue;;>;iao;"	;@;"Helvetica;;#;iao;"	;@;"
+Arial;;#;iao;"	;@;"sans-serif;;#;ia;?;@;ia;	[ ;iao;*;+0;@;"
+serif;,o;=	;@;[
+o;"	;@;"DroidSerifRegular;;>;ico;"	;@;"Cambria;;#;ico;=	;@;[o;"	;@;"
+Times;;#;ico;"	;@;"New;;#;ico;"	;@;"
+Roman;;#;ic;?:
+space;ico;"	;@;"
+Times;;#;ico;"	;@;"
+serif;;#;ic;?;@;ic;	[ ;ico;*;+0;@;"serif-italic;,o;=	;@;[
+o;"	;@;"DroidSerifItalic;;>;ido;"	;@;"Cambria;;#;ido;=	;@;[o;"	;@;"
+Times;;#;ido;"	;@;"New;;#;ido;"	;@;"
+Roman;;#;id;?;A;ido;"	;@;"
+Times;;#;ido;"	;@;"
+serif;;#;id;?;@;id;	[ ;ido;*;+0;@;"serif-bold;,o;=	;@;[
+o;"	;@;"DroidSerifBold;;>;ieo;"	;@;"Cambria;;#;ieo;=	;@;[o;"	;@;"
+Times;;#;ieo;"	;@;"New;;#;ieo;"	;@;"
+Roman;;#;ie;?;A;ieo;"	;@;"
+Times;;#;ieo;"	;@;"
+serif;;#;ie;?;@;ie;	[ ;ieo;*;+0;@;"serif-bold-italic;,o;=	;@;[
+o;"	;@;"DroidSerifBoldItalic;;>;ifo;"	;@;"Cambria;;#;ifo;=	;@;[o;"	;@;"
+Times;;#;ifo;"	;@;"New;;#;ifo;"	;@;"
+Roman;;#;if;?;A;ifo;"	;@;"
+Times;;#;ifo;"	;@;"
+serif;;#;if;?;@;if;	[ ;ifo;*;+0;@;"script;,o;=	;@;[
+o;"	;@;" ;;>;iho;"	;@;"Cambria;;#;iho;=	;@;[o;"	;@;"
+Times;;#;iho;"	;@;"New;;#;iho;"	;@;"
+Roman;;#;ih;?;A;iho;"	;@;"
+Times;;#;iho;"	;@;"
+serif;;#;ih;?;@;ih;	[ ;iho;
+
+;@;["0/* This would be an h1 font or something */;;;	[ ;ijo;*;+0;@;"display;,o;=	;@;[
+o;"	;@;" ;;>;iko;"	;@;"Cambria;;#;iko;=	;@;[o;"	;@;"
+Times;;#;iko;"	;@;"New;;#;iko;"	;@;"
+Roman;;#;ik;?;A;iko;"	;@;"
+Times;;#;iko;"	;@;"
+serif;;#;ik;?;@;ik;	[ ;iko;
+
+;@;["9/* Use font variants instead of font-weight/style */;;;	[ ;ioo;*;+0;@;"em;,o;7	;@;"sans-serif-italic;8"sans_serif_italic;iq;	[ ;iqo;*;+0;@;"strong;,o;7	;@;"sans-serif-bold;8"sans_serif_bold;ir;	[ ;iro;
+
+;@;["ﬂ/* 	To embed your own fonts, use this syntax
+	and place your fonts inside the
+	library/fonts folder. For more information
+	on embedding fonts, go to:
+	http://www.fontsquirrel.com/
+	Be sure to remove the comment brackets.
+*/;;;	[ ;iuo;
+
+;@;["c/* LARA TODO: incorporate this -
+ * http://www.alistapart.com/articles/say-no-to-faux-bold/ */;;;	[ ;i}o;
+
+;@;["¥/*	@font-face {
+    	font-family: 'Font Name';
+    	src: url('library/fonts/font-name.eot');
+    	src: url('library/fonts/font-name.eot?#iefix') format('embedded-opentype'),
+             url('library/fonts/font-name.woff') format('woff'),
+             url('library/fonts/font-name.ttf') format('truetype'),
+             url('library/fonts/font-name.svg#font-name') format('svg');
+    	font-weight: normal;
+    	font-style: normal;
+	}
+*/;;;	[ ;i{o;
+
+;@;["O/* LARA: Instead I am just adding the styles in there to this.
+ * Fonts */;;;	[ ;iáo:Sass::Tree::ImportNode;0;@:@imported_file0;	[ :@imported_filename"4../fonts/Droid-Serif-fontfacekit/stylesheet.css;iâo;B;0;@;C0;	[ ;D"&../fonts/Open-Sans/stylesheet.css;iäo;B;0;@;C0;	[ ;D"/../fonts/Font-Awesome/css/font-awesome.css;ião;
+
+;@;["Y/*
+use the best ampersand
+http://simplebits.com/notebook/2008/08/14/ampersands-2/
+*/;;;	[ ;iço;;i ;@;["span.amp;o;;[o;;[o;
+;[o:Sass::Selector::Element	;["	span;" ;ië;)0o;;["amp;@A;ië;@A;o;;{ ;0;ië;@A;ië;T;	[o;;i ;@;["font-family; ;!;o;=	;@;[
+o;"	;@;"Baskerville;;#;iío;"	;@;"Goudy Old Style;;>;iío;"	;@;"Palatino;;#;iío;"	;@;"Book Antiqua;;>;iío;=	;@;[o;"	;@;"
+serif;;#;iío;"	;@;"!important;;#;ií;?;A;ií;?;@;ií;	[ ;iío;;i ;@;["font-style; ;!;o;";@;"italic;;#;	[ ;iì;iëo;
+
+;@;["/* text alignment  */;;;	[ ;iño;;i ;@;[".text-left;o;;[o;;[o;
+;[o;;["text-left;" ;ió;@r;o;;{ ;0;ió;@r;ió;T;	[o;;i ;@;["text-align; ;!;o;";@;"	left;;#;	[ ;ió;ióo;;i ;@;[".text-center;o;;[o;;[o;
+;[o;;["text-center;" ;iò;@à;o;;{ ;0;iò;@à;iò;T;	[o;;i ;@;["text-align; ;!;o;";@;"center;;#;	[ ;iò;iòo;;i ;@;[".text-right;o;;[o;;[o;
+;[o;;["text-right;" ;iô;@û;o;;{ ;0;iô;@û;iô;T;	[o;;i ;@;["text-align; ;!;o;";@;"
+right;;#;	[ ;iô;iôo;
+
+;@;["/* alerts and notices */;;;	[ ;iúo;;i ;@;["%alert;o;;[o;;[o;
+;[o: Sass::Selector::Placeholder;["
+alert;" ;iù;@∏;o;;{ ;0;iù;@∏;iù;T;	[o;;i ;@;["margin; ;!;o;";@;"	10px;;#;	[ ;iûo;;i ;@;["padding; ;!;o;=	;@;[o;9;:[ ;@;;["px;<"5px;i
+;iüo;9;:[ ;@;;["px;<"	18px;i;iü;?;A;iü;	[ ;iüo;;i ;@;["border; ;!;o;=	;@;[o;9;:[ ;@;;["px;<"1px;i;i†o;"	;@;"
+solid;;#;i†;?;A;i†;	[ ;i†;iùo;;i ;@;[".alert-help;o;;[o;;[o;
+;[o;;["alert-help;" ;i£;@Î;o;;{ ;0;i£;@Î;i£;T;	[o:Sass::Tree::ExtendNode
+:@selector["%"
+alert;@:@optionalF;	[ ;i§o;;i ;@;["border-color; ;!;o;3;4{ ;@;"darken;50;6[o;7	;@;"alert-yellow;8"alert_yellow;i•o;9;:[ ;@;;["%;<"5%;i
+;i•;i•;	[ ;i•o;;i ;@;["background; ;!;o;7	;@;"alert-yellow;8"alert_yellow;i¶;	[ ;i¶;i£o;;i ;@;[".alert-info;o;;[o;;[o;
+;[o;;["alert-info;" ;i©;@;o;;{ ;0;i©;@;i©;T;	[o;G
+;H["%"
+alert;@;IF;	[ ;i™o;;i ;@;["border-color; ;!;o;3;4{ ;@;"darken;50;6[o;7	;@;"alert-blue;8"alert_blue;i´o;9;:[ ;@;;["%;<"5%;i
+;i´;i´;	[ ;i´o;;i ;@;["background; ;!;o;7	;@;"alert-blue;8"alert_blue;i¨;	[ ;i¨;i©o;;i ;@;[".alert-error;o;;[o;;[o;
+;[o;;["alert-error;" ;iØ;@C;o;;{ ;0;iØ;@C;iØ;T;	[o;G
+;H["%"
+alert;@;IF;	[ ;i∞o;;i ;@;["border-color; ;!;o;3;4{ ;@;"darken;50;6[o;7	;@;"alert-red;8"alert_red;i±o;9;:[ ;@;;["%;<"5%;i
+;i±;i±;	[ ;i±o;;i ;@;["background; ;!;o;7	;@;"alert-red;8"alert_red;i≤;	[ ;i≤;iØo;;i ;@;[".alert-success;o;;[o;;[o;
+;[o;;["alert-success;" ;iµ;@o;o;;{ ;0;iµ;@o;iµ;T;	[o;G
+;H["%"
+alert;@;IF;	[ ;i∂o;;i ;@;["border-color; ;!;o;3;4{ ;@;"darken;50;6[o;7	;@;"alert-green;8"alert_green;i∑o;9;:[ ;@;;["%;<"5%;i
+;i∑;i∑;	[ ;i∑o;;i ;@;["background; ;!;o;7	;@;"alert-green;8"alert_green;i∏;	[ ;i∏;iµo;
+
+;@;["@/*********************
+BORDER RADIUS
+*********************/;;;	[ ;iªo;
+
+;@;["‘/*
+I totally rewrote this to be cleaner and easier to use.
+You'll need to be using Sass 3.2+ for these to work.
+Thanks to @anthonyshort for the inspiration on these.
+USAGE: @include border-radius(4px 4px 0 0);
+*/;;;	[ ;iøo:Sass::Tree::MixinDefNode;@;"border-radius;50;T;	[	o;
+
+;@;["?/* defining prefixes so we can use them in mixins below */;;;	[ ;i«o;*;+0;@;"prefixes;,o;=	;@;[
+o;"	;@;"-webkit;;>;i»o;"	;@;"	-moz;;>;i»o;"	;@;"-ms;;>;i»o;"	;@;"-o;;>;i»o;"	;@;" ;;>;i»;?;@;i»;	[ ;i»o:Sass::Tree::EachNode:	@var"prefix;@:
+@listo;7	;@;"prefixes;8"prefixes;i…;T;	[o;;i ;@;[o;7	;@;"prefix;8"prefix;i "-border-radius; ;!;o;7	;@;"radius;8"radius;i ;	[ ;i ;i…o;;i ;@;["border-radius; ;!;o;7	;@;"radius;8"radius;iÕ;	[ ;iÕ;6[[o;7;@;"radius;8"radius0;i∆o;
+
+;@;["=/*********************
+TRANISTION
+*********************/;;;	[ ;i–o;
+
+;@;["⁄/*
+I totally rewrote this to be cleaner and easier to use.
+You'll need to be using Sass 3.2+ for these to work.
+Thanks to @anthonyshort for the inspiration on these.
+USAGE: @include transition(all 0.2s ease-in-out);
+*/;;;	[ ;i‘o;J;@;"transition;50;T;	[	o;
+
+;@;["?/* defining prefixes so we can use them in mixins below */;;;	[ ;i‹o;*;+0;@;"prefixes;,o;=	;@;[
+o;"	;@;"-webkit;;>;i›o;"	;@;"	-moz;;>;i›o;"	;@;"-ms;;>;i›o;"	;@;"-o;;>;i›o;"	;@;" ;;>;i›;?;@;i›;	[ ;i›o;K;L"prefix;@;Mo;7	;@;"prefixes;8"prefixes;iﬁ;T;	[o;;i ;@;[o;7	;@;"prefix;8"prefix;iﬂ"-transition; ;!;o;7	;@;"transition;8"transition;iﬂ;	[ ;iﬂ;iﬁo;;i ;@;["transition; ;!;o;7	;@;"transition;8"transition;i‚;	[ ;i‚;6[[o;7;@;"transition;8"transition0;i€o;
+
+;@;[">/*********************
+BOX SHADOWS
+*********************/;;;	[ ;iÊo;
+
+;@;["‰/*
+I totally rewrote this to be cleaner and easier to use.
+You'll need to be using Sass 3.2+ for these to work.
+Thanks to @anthonyshort for the inspiration on these.
+USAGE: @include box-shadow(inset 0 0 4px rgba(0,0,0,0.22));
+*/;;;	[ ;iÍo;J;@;"box-shadow;50;T;	[	o;
+
+;@;["?/* defining prefixes so we can use them in mixins below */;;;	[ ;iÚo;*;+0;@;"prefixes;,o;=	;@;[
+o;"	;@;"-webkit;;>;iÛo;"	;@;"	-moz;;>;iÛo;"	;@;"-ms;;>;iÛo;"	;@;"-o;;>;iÛo;"	;@;" ;;>;iÛ;?;@;iÛ;	[ ;iÛo;K;L"prefix;@;Mo;7	;@;"prefixes;8"prefixes;iÙ;T;	[o;;i ;@;[o;7	;@;"prefix;8"prefix;iı"-box-shadow; ;!;o;7	;@;"shadow;8"shadow;iı;	[ ;iı;iÙo;;i ;@;["box-shadow; ;!;o;7	;@;"shadow;8"shadow;i¯;	[ ;i¯;6[[o;7;@;"shadow;8"shadow0;iÒo;
+
+;@;["é/*********************
+CSS3 GRADIENTS
+Be careful with these since they can
+really slow down your CSS. Don't overdue it.
+*********************/;;;	[ ;i¸o;
+
+;@;["2/* @include css-gradient(#dfdfdf,#f8f8f8); */;;;	[ ;io;J;@;"css-gradient;50;T;	[o;;i ;@;["background-color; ;!;o;7	;@;"to;8"to;i;	[ ;io;;i ;@;["background-image; ;!;o;3;4{ ;@;"-webkit-gradient;50;6[
+o;"	;@;"linear;;#;io;=	;@;[o;"	;@;"	left;;#;io;"	;@;"top;;#;i;?;A;io;=	;@;[o;"	;@;"	left;;#;io;"	;@;"bottom;;#;i;?;A;io;3;4{ ;@;"	from;50;6[o;7	;@;"	from;8"	from;i;io;3;4{ ;@;"to;50;6[o;7	;@;"to;8"to;i;i;i;	[ ;io;;i ;@;["background-image; ;!;o;3;4{ ;@;"-webkit-linear-gradient;50;6[o;"	;@;"top;;#;io;7	;@;"	from;8"	from;io;7	;@;"to;8"to;i;i;	[ ;io;;i ;@;["background-image; ;!;o;3;4{ ;@;"-moz-linear-gradient;50;6[o;"	;@;"top;;#;io;7	;@;"	from;8"	from;io;7	;@;"to;8"to;i;i;	[ ;io;;i ;@;["background-image; ;!;o;3;4{ ;@;"-o-linear-gradient;50;6[o;"	;@;"top;;#;io;7	;@;"	from;8"	from;io;7	;@;"to;8"to;i;i;	[ ;io;;i ;@;["background-image; ;!;o;3;4{ ;@;"linear-gradient;50;6[o;=	;@;[o;"	;@;"to;;#;i	o;"	;@;"bottom;;#;i	;?;A;i	o;7	;@;"	from;8"	from;i	o;7	;@;"to;8"to;i	;i	;	[ ;i	;6[[o;7;@;"	from;8"	fromo;-	;@;.{	;/iﬂ;0i;1iﬂ;2iﬂ;0;i[o;7;@;"to;8"too;-	;@;.{	;/i¯;0i;1i¯;2i¯;0;i;io;
+
+;@;["=/*********************
+BOX SIZING
+*********************/;;;	[ ;io;
+
+;@;["+/* @include box-sizing(border-box); */;;;	[ ;io;
+
+;@;["Ä/* NOTE: value of "padding-box" is only supported in Gecko. So
+probably best not to use it. I mean, were you going to anyway? */;;;	[ ;io;J;@;"box-sizing;50;T;	[	o;;i ;@;["-webkit-box-sizing; ;!;o;7	;@;"	type;8"	type;i;	[ ;io;;i ;@;["-moz-box-sizing; ;!;o;7	;@;"	type;8"	type;i;	[ ;io;;i ;@;["-ms-box-sizing; ;!;o;7	;@;"	type;8"	type;i;	[ ;io;;i ;@;["box-sizing; ;!;o;7	;@;"	type;8"	type;i;	[ ;i;6[[o;7;@;"	type;8"	typeo;"	;@;"border-box;;#;i;io;
+
+;@;[":/*********************
+BUTTONS
+*********************/;;;	[ ;io;;i ;@;[".button, .button:visited;o;;[o;;[o;
+;[o;;["button;" ;i;@;o;;{ ;0;io;;[o;
+;[o;;["button;@;io;%
+;&0;["visited;@;;';i;@;o;;{ ;0;i;@;i;T;	[o;;i ;@;["font-family; ;!;o;7	;@;"sans-serif;8"sans_serif;i ;	[ ;i o;;i ;@;["border; ;!;o;=	;@;[o;9;:[ ;@;;["px;<"1px;i;i!o;"	;@;"
+solid;;#;i!o;3;4{ ;@;"darken;50;6[o;7	;@;"link-color;8"link_color;i!o;9;:[ ;@;;["%;<"13%;i;i!;i!;?;A;i!;	[ ;i!o;;i ;@;["border-top-color; ;!;o;3;4{ ;@;"darken;50;6[o;7	;@;"link-color;8"link_color;i"o;9;:[ ;@;;["%;<"7%;i;i";i";	[ ;i"o;;i ;@;["border-left-color; ;!;o;3;4{ ;@;"darken;50;6[o;7	;@;"link-color;8"link_color;i#o;9;:[ ;@;;["%;<"7%;i;i#;i#;	[ ;i#o;;i ;@;["padding; ;!;o;=	;@;[o;9;:[ ;@;;["px;<"4px;i	;i$o;9;:[ ;@;;["px;<"	12px;i;i$;?;A;i$;	[ ;i$o;;i ;@;["
+color; ;!;o;7	;@;"
+white;8"
+white;i%;	[ ;i%o;;i ;@;["display; ;!;o;";@;"inline-block;;#;	[ ;i&o;;i ;@;["font-size; ;!;o;";@;"	11px;;#;	[ ;i'o;;i ;@;["font-weight; ;!;o;";@;"	bold;;#;	[ ;i(o;;i ;@;["text-decoration; ;!;o;";@;"	none;;#;	[ ;i)o;;i ;@;["text-shadow; ;!;o;=	;@;[o;9;:[ ;@;;[ ;<"0;i ;i*o;9;:[ ;@;;["px;<"1px;i;i*o;3;4{ ;@;"	rgba;50;6[	o;9;:@ã;@;;[ ;<"0;i ;i*o;9;:@ã;@;;[ ;<"0;i ;i*o;9;:@ã;@;;[ ;<"0;i ;i*o;9;:@ã;@;;[ ;<"	0.75;f	0.75;i*;i*;?;A;i*;	[ ;i*o;;i ;@;["cursor; ;!;o;";@;"pointer;;#;	[ ;i+o;;i ;@;["margin-bottom; ;!;o;";@;"	20px;;#;	[ ;i,o;;i ;@;["line-height; ;!;o;";@;"	21px;;#;	[ ;i-o:Sass::Tree::MixinNode;4{ ;@;"border-radius;50;	[ ;6[o;9;:[ ;@;;["px;<"4px;i	;i.;i.o;N;4{ ;@;"css-gradient;50;	[ ;6[o;7	;@;"link-color;8"link_color;i/o;3;4{ ;@;"darken;50;6[o;7	;@;"link-color;8"link_color;i/o;9;:[ ;@;;["%;<"5%;i
+;i/;i/;i/o;;i ;@;["&:hover, &:focus;o;;[o;;[o;
+;[o;$;" ;i2o;%
+;&0;["
+hover;@ﬂ;;';i2;@ﬂ;o;;{ ;0;i2o;;[o;
+;[o;$;@ﬂ;i2o;%
+;&0;["
+focus;@ﬂ;;';i2;@ﬂ;o;;{ ;0;i2;@ﬂ;i2;T;	[
+o;;i ;@;["
+color; ;!;o;7	;@;"
+white;8"
+white;i3;	[ ;i3o;;i ;@;["border; ;!;o;=	;@;[o;9;:[ ;@;;["px;<"1px;i;i4o;"	;@;"
+solid;;#;i4o;3;4{ ;@;"darken;50;6[o;7	;@;"link-color;8"link_color;i4o;9;:[ ;@;;["%;<"13%;i;i4;i4;?;A;i4;	[ ;i4o;;i ;@;["border-top-color; ;!;o;3;4{ ;@;"darken;50;6[o;7	;@;"link-color;8"link_color;i5o;9;:[ ;@;;["%;<"20%;i;i5;i5;	[ ;i5o;;i ;@;["border-left-color; ;!;o;3;4{ ;@;"darken;50;6[o;7	;@;"link-color;8"link_color;i6o;9;:[ ;@;;["%;<"20%;i;i6;i6;	[ ;i6o;N;4{ ;@;"css-gradient;50;	[ ;6[o;3;4{ ;@;"darken;50;6[o;7	;@;"link-color;8"link_color;i7o;9;:[ ;@;;["%;<"5%;i
+;i7;i7o;3;4{ ;@;"darken;50;6[o;7	;@;"link-color;8"link_color;i7o;9;:[ ;@;;["%;<"10%;i;i7;i7;i7;i2o;;i ;@;["&:active;o;;[o;;[o;
+;[o;$;" ;i:o;%
+;&0;["active;@W;;';i:;@W;o;;{ ;0;i:;@W;i:;T;	[o;N;4{ ;@;"css-gradient;50;	[ ;6[o;3;4{ ;@;"darken;50;6[o;7	;@;"link-color;8"link_color;i;o;9;:[ ;@;;["%;<"5%;i
+;i;;i;o;7	;@;"link-color;8"link_color;i;;i;;i:;io;;i ;@;["'.blue-button, .blue-button:visited;o;;[o;;[o;
+;[o;;["blue-button;" ;i?;@~;o;;{ ;0;i?o;;[o;
+;[o;;["blue-button;@~;i?o;%
+;&0;["visited;@~;;';i?;@~;o;;{ ;0;i?;@~;i?;T;	[o;G
+;H["."button;@;IF;	[ ;i@o;;i ;@;["border-color; ;!;o;3;4{ ;@;"darken;50;6[o;7	;@;"bones-blue;8"bones_blue;iAo;9;:[ ;@;;["%;<"10%;i;iA;iA;	[ ;iAo;;i ;@;["text-shadow; ;!;o;=	;@;[	o;9;:@ã;@;;[ ;<"0;i ;iBo;9;:[ ;@;;["px;<"1px;i;iBo;9;:[ ;@;;["px;<"1px;i;iBo;3;4{ ;@;"darken;50;6[o;7	;@;"bones-blue;8"bones_blue;iBo;9;:[ ;@;;["%;<"10%;i;iB;iB;?;A;iB;	[ ;iBo;N;4{ ;@;"css-gradient;50;	[ ;6[o;7	;@;"bones-blue;8"bones_blue;iCo;3;4{ ;@;"darken;50;6[o;7	;@;"bones-blue;8"bones_blue;iCo;9;:[ ;@;;["%;<"5%;i
+;iC;iC;iCo;N;4{ ;@;"box-shadow;50;	[ ;6[o;=	;@;[
+o;"	;@;"
+inset;;#;iDo;9;:@ã;@;;[ ;<"0;i ;iDo;9;:@ã;@;;[ ;<"0;i ;iDo;9;:[ ;@;;["px;<"3px;i;iDo;3;4{ ;@;"lighten;50;6[o;7	;@;"bones-blue;8"bones_blue;iDo;9;:[ ;@;;["%;<"16%;i;iD;iD;?;A;iD;iDo;;i ;@;["&:hover, &:focus;o;;[o;;[o;
+;[o;$;" ;iFo;%
+;&0;["
+hover;@ ;;';iF;@ ;o;;{ ;0;iFo;;[o;
+;[o;$;@ ;iFo;%
+;&0;["
+focus;@ ;;';iF;@ ;o;;{ ;0;iF;@ ;iF;T;	[o;;i ;@;["border-color; ;!;o;3;4{ ;@;"darken;50;6[o;7	;@;"bones-blue;8"bones_blue;iGo;9;:[ ;@;;["%;<"15%;i;iG;iG;	[ ;iGo;N;4{ ;@;"css-gradient;50;	[ ;6[o;3;4{ ;@;"darken;50;6[o;7	;@;"bones-blue;8"bones_blue;iHo;9;:[ ;@;;["%;<"4%;i	;iH;iHo;3;4{ ;@;"darken;50;6[o;7	;@;"bones-blue;8"bones_blue;iHo;9;:[ ;@;;["%;<"10%;i;iH;iH;iH;iFo;;i ;@;["&:active;o;;[o;;[o;
+;[o;$;" ;iJo;%
+;&0;["active;@H;;';iJ;@H;o;;{ ;0;iJ;@H;iJ;T;	[o;N;4{ ;@;"css-gradient;50;	[ ;6[o;3;4{ ;@;"darken;50;6[o;7	;@;"bones-blue;8"bones_blue;iKo;9;:[ ;@;;["%;<"5%;i
+;iK;iKo;7	;@;"bones-blue;8"bones_blue;iK;iK;iJ;i?;i

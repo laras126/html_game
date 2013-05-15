@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="us">
+<head>
+	<meta charset="utf-8">
+	<title>jQuery UI Example Page</title>
+	<link href="css/flick/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	
+</head>
+
+<body>
+
+<div class="wrap">
+
+	<ul class="controls">
+		<li><span class="button">Float left</span></li>
+		<li><span class="button">Float right</span></li><br />
+		<li><span class="blue-button">Position relative</span></li>
+		<li><span class="blue-button">Position absolute</span></li>
+		<li><span class="blue-button">Position fixed</span></li><br />
+		<li><span class="button" id="reset">Reset</span></li>
+		<li><span class="button" id="showSizes">Show Sizes</span></li>
+	</ul>
+
+	<div class="container clearfix">
+		
+		<ul id="level1" class="sortable clearfix">
+			<li class="ui-state-default whole-horiz eighth-vert"></li>
+			<li class="ui-state-default fourth-horiz eighth-vert"></li>
+			<li class="ui-state-default eighth-horiz fourth-vert"></li>
+			<li class="ui-state-default fourth-horiz fourth-vert"></li>
+			<li class="ui-state-default eighth-horiz eighth-vert"></li>
+			<li class="ui-state-default eighth-horiz eighth-vert"></li>
+			<li class="ui-state-default eighth-horiz half-vert"></li>
+			<li class="ui-state-default eighth-horiz fourth-vert"></li>
+			<li class="ui-state-default half-horiz fourth-vert"></li>
+			<li class="ui-state-default fourth-horiz eighth-vert"></li>
+			<li class="ui-state-default fourth-horiz half-vert"></li>
+			<li class="ui-state-default half-horiz half-vert"></li>
+			<li class="ui-state-default fourth-horiz eighth-vert"></li>
+
+			<li class="ui-state-default eighth-horiz half-vert"></li>
+		</ul>
+	
+	</div>
+
+	<div class="container clearfix" style="display: none">
+		
+		<ul id="level2" class="sortable clearfix top">
+			<li class="ui-state-default whole-horiz half-vert">
+
+				<ul class="sortable clearfix second">
+
+					<li class="ui-state-default whole-horiz half-vert">
+
+						<ul id="level1" class="sortable clearfix third">
+							
+							<li class="ui-state-default half-horiz half-vert">
+
+								<ul class="sortable clearfix fourth">
+									<li class="ui-state-default half-horiz whole-vert"></li>
+									<li class="ui-state-default half-horiz whole-vert"></li>
+								</ul>
+
+							</li>
+							<li class="ui-state-default half-horiz whole-vert"></li>
+							<li class="ui-state-default half-horiz half-vert"></li>
+						</ul> <!-- third -->
+
+					</li>
+
+					<li class="ui-state-default half-horiz half-vert"></li>
+					<li class="ui-state-default half-horiz half-vert"></li>
+				</ul> <!-- .second -->
+			</li>
+
+			<li class="ui-state-default half-horiz half-vert"></li>
+			<li class="ui-state-default half-horiz half-vert"></li>
+		</ul> <!-- top -->
+	
+	</div>
+	<pre class="source"></pre>
+</div>
+	<script src="js/jquery-1.9.1.js"></script>
+	<script src="js/jquery-ui-1.10.3.custom.js"></script>
+	<script src="js/plugins.js"></script>
+	<script src="js/main.js"></script>
+
+</body>
+</html>

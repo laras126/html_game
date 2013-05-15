@@ -1,0 +1,147 @@
+/******************************************************************
+Site Name: HTML Game for Saxifrage Web Dev 101
+Author: Lara Schenck // notlaura.com
+
+Stylesheet: Main Stylesheet
+
+******************************************************************/
+
+@import "normalize";
+@import "mixins";
+@import "snippet";
+@import "base";
+
+html, body {
+	height: 100%;
+}
+
+body {
+	background: #eaeaea;
+	font-size: 0.9em;
+}
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	width: 100%;
+}
+
+.wrap {
+	margin-top: 30px;
+	width: 100%;
+	max-width: 960px;
+}
+
+.container {
+	width: 100%;
+	margin: 0 auto;
+	height: 800px;
+	background: #fff;
+	border: 10px solid #ddd;
+}
+
+.controls {
+	width: 100%;
+	// float: left;
+	li {
+		display: inline;
+	}
+}
+
+.sortable {
+	border-bottom: 10px solid #ddd;
+	height: 100%;
+	padding: 0;
+	&:last-child {
+		border-bottom: 0;
+	}
+
+	li {
+		background: lighten($bones-blue, 20%);
+		border: 1px solid #fff;
+		margin: 0;
+		padding: 10px;
+		float: left;
+		cursor: pointer;
+
+		&:active {
+			background: $bones-blue;
+		}
+	}
+}
+
+
+.top li {
+	background: $bones-blue;
+	&:hover {
+		background: lighten($bones-blue, 20%);
+	}
+}
+
+.second li {
+	background: $bones-pink;
+
+	&:hover {
+		background: lighten($bones-pink, 20%);
+	}
+}
+
+.third li {
+	background: $alert-yellow;
+	&:hover {
+		background: lighten($alert-yellow, 20%);
+	}
+}
+
+.fourth li {
+	background: darken($alert-green, 35%);
+	&:hover {
+		background: darken($alert-green, 15%);
+	}
+}
+
+
+
+.before {
+	background: darken($alert-green, 10%) !important;
+}
+
+.after {
+	background: darken($alert-red, 10%) !important;
+}
+
+
+
+$total: 99.9%;
+
+.whole-horiz {
+	width: $total;
+}
+
+.whole-vert {
+	height: $total;
+}
+
+.half-horiz {
+	width: $total/2;
+}
+
+.half-vert {
+	height: $total/2;
+}
+
+.fourth-horiz {
+	width: $total/4;
+}
+
+.fourth-vert {
+	height: $total/4;
+}
+
+.eighth-horiz {
+	width: $total/8;
+}
+
+.eighth-vert {
+	height: $total/8;
+}
