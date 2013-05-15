@@ -16,8 +16,9 @@ html, body {
 }
 
 body {
-	background: #eaeaea;
+	background: #444;
 	font-size: 0.9em;
+	color: #fff
 }
 
 ul {
@@ -32,7 +33,7 @@ ul {
 	max-width: 960px;
 }
 
-.container {
+.puzzle {
 	width: 100%;
 	margin: 0 auto;
 	height: 800px;
@@ -64,6 +65,10 @@ ul {
 		float: left;
 		cursor: pointer;
 
+		&:hover {
+			background: lighten($bones-blue, 10%);;
+		}
+
 		&:active {
 			background: $bones-blue;
 		}
@@ -80,27 +85,30 @@ ul {
 
 .second li {
 	background: $bones-pink;
-
+	position: relative;
+	z-index: 2;
 	&:hover {
 		background: lighten($bones-pink, 20%);
 	}
 }
 
 .third li {
-	background: $alert-yellow;
+	position: relative;
+	z-index: 3;
+	background: darken($alert-green, 30%);
 	&:hover {
-		background: lighten($alert-yellow, 20%);
+		background: darken($alert-green, 10%);
 	}
 }
 
 .fourth li {
+	position: relative;
+	z-index: 4;
 	background: darken($alert-green, 35%);
 	&:hover {
 		background: darken($alert-green, 15%);
 	}
 }
-
-
 
 .before {
 	background: darken($alert-green, 10%) !important;
@@ -110,6 +118,16 @@ ul {
 	background: darken($alert-red, 10%) !important;
 }
 
+.kudos {
+	margin-top: 5em;
+	display: none;
+}
+
+
+
+
+
+// Box grid
 
 $total: 99.9%;
 
@@ -144,3 +162,4 @@ $total: 99.9%;
 .eighth-vert {
 	height: $total/8;
 }
+

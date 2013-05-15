@@ -1439,26 +1439,27 @@ html, body {
 
 /* line 18, ../scss/style.scss */
 body {
-  background: #eaeaea;
+  background: #444;
   font-size: 0.9em;
+  color: white;
 }
 
-/* line 23, ../scss/style.scss */
+/* line 24, ../scss/style.scss */
 ul {
   list-style-type: none;
   margin: 0;
   width: 100%;
 }
 
-/* line 29, ../scss/style.scss */
+/* line 30, ../scss/style.scss */
 .wrap {
   margin-top: 30px;
   width: 100%;
   max-width: 960px;
 }
 
-/* line 35, ../scss/style.scss */
-.container {
+/* line 36, ../scss/style.scss */
+.puzzle {
   width: 100%;
   margin: 0 auto;
   height: 800px;
@@ -1466,26 +1467,26 @@ ul {
   border: 10px solid #dddddd;
 }
 
-/* line 43, ../scss/style.scss */
+/* line 44, ../scss/style.scss */
 .controls {
   width: 100%;
 }
-/* line 46, ../scss/style.scss */
+/* line 47, ../scss/style.scss */
 .controls li {
   display: inline;
 }
 
-/* line 51, ../scss/style.scss */
+/* line 52, ../scss/style.scss */
 .sortable {
   border-bottom: 10px solid #dddddd;
   height: 100%;
   padding: 0;
 }
-/* line 55, ../scss/style.scss */
+/* line 56, ../scss/style.scss */
 .sortable:last-child {
   border-bottom: 0;
 }
-/* line 59, ../scss/style.scss */
+/* line 60, ../scss/style.scss */
 .sortable li {
   background: #6cbcee;
   border: 1px solid white;
@@ -1494,93 +1495,109 @@ ul {
   float: left;
   cursor: pointer;
 }
-/* line 67, ../scss/style.scss */
+/* line 68, ../scss/style.scss */
+.sortable li:hover {
+  background: #3ea7e9;
+}
+/* line 72, ../scss/style.scss */
 .sortable li:active {
   background: #1990db;
 }
 
-/* line 74, ../scss/style.scss */
+/* line 79, ../scss/style.scss */
 .top li {
   background: #1990db;
 }
-/* line 76, ../scss/style.scss */
+/* line 81, ../scss/style.scss */
 .top li:hover {
   background: #6cbcee;
 }
 
-/* line 81, ../scss/style.scss */
+/* line 86, ../scss/style.scss */
 .second li {
   background: #f01d4f;
+  position: relative;
+  z-index: 2;
 }
-/* line 84, ../scss/style.scss */
+/* line 90, ../scss/style.scss */
 .second li:hover {
   background: #f67d99;
 }
 
-/* line 89, ../scss/style.scss */
+/* line 95, ../scss/style.scss */
 .third li {
-  background: #ebe16f;
+  position: relative;
+  z-index: 3;
+  background: #b4cf49;
 }
-/* line 91, ../scss/style.scss */
+/* line 99, ../scss/style.scss */
 .third li:hover {
-  background: #f7f4c9;
+  background: #d5e49a;
 }
 
-/* line 96, ../scss/style.scss */
+/* line 104, ../scss/style.scss */
 .fourth li {
+  position: relative;
+  z-index: 4;
   background: #acca35;
 }
-/* line 98, ../scss/style.scss */
+/* line 108, ../scss/style.scss */
 .fourth li:hover {
   background: #cddf85;
 }
 
-/* line 105, ../scss/style.scss */
+/* line 113, ../scss/style.scss */
 .before {
   background: #d5e49a !important;
 }
 
-/* line 109, ../scss/style.scss */
+/* line 117, ../scss/style.scss */
 .after {
   background: #f5b6b9 !important;
 }
 
-/* line 116, ../scss/style.scss */
+/* line 121, ../scss/style.scss */
+.kudos {
+  margin-top: 5em;
+  display: none;
+}
+
+/* line 134, ../scss/style.scss */
 .whole-horiz {
   width: 99.9%;
 }
 
-/* line 120, ../scss/style.scss */
+/* line 138, ../scss/style.scss */
 .whole-vert {
   height: 99.9%;
 }
 
-/* line 124, ../scss/style.scss */
+/* line 142, ../scss/style.scss */
 .half-horiz {
   width: 49.95%;
 }
 
-/* line 128, ../scss/style.scss */
+/* line 146, ../scss/style.scss */
 .half-vert {
   height: 49.95%;
 }
 
-/* line 132, ../scss/style.scss */
+/* line 150, ../scss/style.scss */
 .fourth-horiz {
   width: 24.975%;
 }
 
-/* line 136, ../scss/style.scss */
+/* line 154, ../scss/style.scss */
 .fourth-vert {
   height: 24.975%;
 }
 
-/* line 140, ../scss/style.scss */
+/* line 158, ../scss/style.scss */
 .eighth-horiz {
   width: 12.4875%;
 }
 
-/* line 144, ../scss/style.scss */
+/* line 162, ../scss/style.scss */
 .eighth-vert {
   height: 12.4875%;
 }

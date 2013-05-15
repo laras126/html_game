@@ -10,10 +10,8 @@ $(document).ready(function() {
     $('ul, li').disableSelection();
 
 
- 	var sortDiv = '.sortable li';
-	//showHideBordersOnClick(sortDiv);
-
-	$('.sortable li').hover(function(){
+    // Show the previous and next divs when hovered over
+	/*$('.sortable li').hover(function(){
 		$(this).prev().addClass('before');
 		$(this).next().addClass('after');
 	}, function() {
@@ -21,7 +19,7 @@ $(document).ready(function() {
 			$(this).removeClass('before after');
 		});
 	}
-	);
+	);*/
 
 	var element = $('.container');
 	setInterval(function(){
@@ -58,6 +56,11 @@ $(document).ready(function() {
 
 	$('#reset').click(function(){
 		location.reload();
+	});
+
+	$('#done').click(function(){
+		$('.puzzle').fadeOut(200);
+		$('.kudos').fadeIn(200);
 	});
 
 });
