@@ -1545,42 +1545,42 @@ ul {
   background: #f5b6b9 !important;
 }
 
-/* line 117, ../scss/style.scss */
+/* line 116, ../scss/style.scss */
 .whole-horiz {
   width: 99.9%;
 }
 
-/* line 121, ../scss/style.scss */
+/* line 120, ../scss/style.scss */
 .whole-vert {
   height: 99.9%;
 }
 
-/* line 125, ../scss/style.scss */
+/* line 124, ../scss/style.scss */
 .half-horiz {
   width: 49.95%;
 }
 
-/* line 129, ../scss/style.scss */
+/* line 128, ../scss/style.scss */
 .half-vert {
   height: 49.95%;
 }
 
-/* line 133, ../scss/style.scss */
+/* line 132, ../scss/style.scss */
 .fourth-horiz {
   width: 24.975%;
 }
 
-/* line 137, ../scss/style.scss */
+/* line 136, ../scss/style.scss */
 .fourth-vert {
   height: 24.975%;
 }
 
-/* line 141, ../scss/style.scss */
+/* line 140, ../scss/style.scss */
 .eighth-horiz {
   width: 12.4875%;
 }
 
-/* line 145, ../scss/style.scss */
+/* line 144, ../scss/style.scss */
 .eighth-vert {
   height: 12.4875%;
 }
