@@ -2,12 +2,10 @@
 
 	<div id="puzzle2">
 		<h1>Puzzle 3</h1>
-		<p>Arrange all of the blue boxes into the white square. <br />
-			Arrange all of the pink boxes into the blue boxes.<br />
-			Arrange all of the green boxes into the pink boxes.<br />
-			<br />Spot any patterns?</p>
-		<span class="button" id="reset">Reset</span>
-		<span class="blue-button" id="done">Done!</span>
+		<p>Arrange all of the blue boxes into the white square, the pink boxes into the blue boxes, and the green boxes into the pink boxes.</p>
+		<a class="blue-button" id="back" href="puzzle2.php">&larr;Back</a>
+		<span class="blue-button" id="reset">Reset</span>
+		<span class="button" id="done">Done!</span>
 		
 		<div class="puzzle clearfix">
 			<!-- <ul class="controls">
@@ -168,7 +166,7 @@
 		<div class="kudos">
 			<p class="h1">Words of encouragement!</p>
 			<p>You deserve a sandwich.</p>
-			<p>Write down three rules you realized as you worked through the puzzles. For quick reference, links: </p>
+			<p>Write down three patterns you realized as you worked through the puzzles. For quick reference, links: </p>
 				<ul>
 					<li><a href="index.php">Puzzle 1</a></li>
 					<li><a href="puzzle2.php">Puzzle 2</a></li>

@@ -2,11 +2,10 @@
 
 	<div id="puzzle1">
 		<h1>Puzzle 2</h1>
-		<p>Arrange all of the blue boxes into the white square. <br />
-			Arrange all of the pink boxes into the blue boxes<br />. 
-			<br />Spot any patterns?</p>
-		<span class="button" id="reset">Reset</span>
-		<span class="blue-button" id="done">Done!</span>
+		<p>Arrange all of the blue boxes into the white square and the pink boxes into the blue boxes.</p>
+		<a class="blue-button" id="back" href="index.php">&larr;Back</a>
+		<span class="blue-button" id="reset">Reset</span>
+		<span class="button" id="done">Done!</span>
 		
 		<div class="puzzle clearfix">
 			<!-- <ul class="controls">
@@ -57,7 +56,7 @@
 		<div class="kudos">
 			<p class="h1">Excellent work!</p>
 			<p>You champion, you.</p>
-			<a href="puzzle3.php" class="blue-button">Proceed to the next puzzle &rarr;</a>
+			<a href="puzzle3.php" class="button">Proceed to the next puzzle &rarr;</a>
 		</div>
 
 	</div> <!-- puzzle2 -->

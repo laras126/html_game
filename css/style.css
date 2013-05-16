@@ -234,7 +234,7 @@ kbd,
 pre,
 samp {
   font-family: monospace, serif;
-  _font-family: "courier new", monospace;
+  _font-family: 'courier new', monospace;
   font-size: 1em;
 }
 
@@ -385,7 +385,7 @@ form {
  */
 /* line 372, ../scss/_normalize.scss */
 fieldset {
-  border: 1px solid silver;
+  border: 1px solid #c0c0c0;
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em;
 }
@@ -646,7 +646,7 @@ http://simplebits.com/notebook/2008/08/14/ampersands-2/
 */
 /* line 145, ../scss/_mixins.scss */
 span.amp {
-  font-family: Baskerville, "Goudy Old Style", Palatino, "Book Antiqua", serif !important;
+  font-family: Baskerville,'Goudy Old Style',Palatino,'Book Antiqua',serif !important;
   font-style: italic;
 }
 
@@ -1081,9 +1081,9 @@ BUTTONS
   -moz-border-radius: 15px;
   -webkit-border-radius: 15px;
   border-radius: 15px;
-  box-shadow: 2px 2px 5px black;
-  -moz-box-shadow: 2px 2px 5px black;
-  -webkit-box-shadow: 2px 2px 5px black;
+  box-shadow: 2px 2px 5px #000;
+  -moz-box-shadow: 2px 2px 5px #000;
+  -webkit-box-shadow: 2px 2px 5px #000;
 }
 
 /* line 22, ../scss/_snippet.scss */
@@ -1103,7 +1103,7 @@ BUTTONS
 
 /* line 25, ../scss/_snippet.scss */
 .snippet-reveal pre.sh_sourceCode {
-  padding: 0.5em 1em;
+  padding: .5em 1em;
   text-align: right;
 }
 
@@ -1115,7 +1115,7 @@ BUTTONS
 /* line 27, ../scss/_snippet.scss */
 .snippet-wrap .snippet-no-num {
   list-style: none;
-  padding: 0.6em 1em;
+  padding: .6em 1em;
   margin: 0;
 }
 
@@ -1455,16 +1455,16 @@ ul {
 .wrap {
   margin-top: 30px;
   width: 100%;
-  max-width: 960px;
+  max-width: 800px;
 }
 
 /* line 36, ../scss/style.scss */
 .puzzle {
   width: 100%;
   margin: 0 auto;
-  height: 800px;
+  height: 700px;
   background: #fff;
-  border: 10px solid #dddddd;
+  border: 10px solid #ddd;
 }
 
 /* line 44, ../scss/style.scss */
@@ -1478,7 +1478,7 @@ ul {
 
 /* line 52, ../scss/style.scss */
 .sortable {
-  border-bottom: 10px solid #dddddd;
+  border-bottom: 10px solid #ddd;
   height: 100%;
   padding: 0;
 }
@@ -1489,7 +1489,7 @@ ul {
 /* line 60, ../scss/style.scss */
 .sortable li {
   background: #6cbcee;
-  border: 1px solid white;
+  border: 1px solid #fff;
   margin: 0;
   padding: 10px;
   float: left;
