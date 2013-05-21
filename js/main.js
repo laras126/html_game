@@ -6,10 +6,23 @@ $(document).ready(function() {
     $('.sortable').sortable({
 		revert: true
 	});
+	$('.draggable li').draggable({
+		helper: "clone",
+		stack: ".draggable li",
+		scroll: true
+	})
+	.selectable();
+
+	$('.droppable').droppable({
+      drop: function( event, ui ) {
+        $( this )
+          .addClass('');
+      }
+    });
 
     $('ul, li').disableSelection();
 
-
+	
     // Show the previous and next divs when hovered over
 	/*$('.sortable li').hover(function(){
 		$(this).prev().addClass('before');

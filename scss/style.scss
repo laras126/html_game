@@ -9,6 +9,7 @@ Stylesheet: Main Stylesheet
 @import "normalize";
 @import "mixins";
 @import "snippet";
+@import "grid";
 @import "base";
 
 html, body {
@@ -21,6 +22,10 @@ body {
 	color: #fff
 }
 
+img {
+	max-width: 100%;
+}
+
 ul {
 	list-style-type: none;
 	margin: 0;
@@ -29,12 +34,12 @@ ul {
 
 .wrap {
 	margin-top: 30px;
+	padding-bottom: 30px;
 	width: 100%;
 	max-width: 800px;
 }
 
 .puzzle {
-	width: 100%;
 	margin: 0 auto;
 	height: 700px;
 	background: #fff;
@@ -93,8 +98,6 @@ ul {
 }
 
 .third li {
-	position: relative;
-	z-index: 3;
 	background: darken($alert-green, 30%);
 	&:hover {
 		background: darken($alert-green, 10%);
@@ -124,6 +127,74 @@ ul {
 }
 
 
+
+
+// Selectors
+
+.selectors {
+	background: $white;
+	padding: 1em;
+
+	.draggable {
+		padding: 0;
+		
+		li {
+			position: relative;
+			z-index: 999;
+			width: 60px;
+			max-width: 100%;
+			padding: 1em 0;
+			margin: 1em 0;
+			text-align: center;
+			cursor: pointer;
+		}
+	}
+}
+
+#selectors1 .puzzle {
+	background: #eee;
+	.droppable {
+		padding: 1em;
+		border: 1px solid #999;
+	}
+}
+
+.girly {
+	@include box-shadow(0 0 3px $bones-pink);
+	@include css-gradient($bones-pink, lighten($bones-pink, 30%));
+	@include border-radius(10px);
+	font-family: $serif-italic;
+	font-size: 1.2em;
+	letter-spacing: 2px;
+}
+
+.boyish {
+	background: #1C5446;
+	border: 3px solid #47AC39;
+}
+
+.woody {
+	background: url('../img/tileable_wood_texture.png');
+}
+
+.text-style1 {
+	color: $white;
+	text-shadow: 1px 1px 3px #47AC39;
+}
+
+.title-text {
+	color: #362C12;
+	font-family: $serif-bold;
+	font-size: 2em;
+	line-height: 0;
+}
+
+.error {
+	text-transform: uppercase;
+	color: red;
+	font-family: $sans-serif-bold;
+	font-size: 1.25em;
+}
 
 
 

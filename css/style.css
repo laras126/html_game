@@ -1205,6 +1205,117 @@ BUTTONS
 Site Name:
 Author:
 
+Stylesheet: Grid Stylesheet
+
+I've seperated the grid so you can swap it out easily. It's
+called at the top the style.scss stylesheet.
+
+There are a ton of grid solutions out there. You should definitely
+experiment with your own. Here are some recommendations:
+
+http://gridsetapp.com - Love this site. Responsive Grids made easy.
+http://susy.oddbird.net/ - Grids using Compass. Very elegant.
+http://gridpak.com/ - Create your own responsive grid.
+
+The grid below is a combination of the 1140 grid and Twitter Boostrap. 
+I liked 1140 but Boostrap's grid was way more detailed so I merged them 
+together, let's see how this works out. If you want to use 1140, the original 
+values are commented out on each line.
+
+******************************************************************/
+/* line 24, ../scss/_grid.scss */
+.onecol {
+  width: 5.801104972%;
+}
+
+/* 4.85%;  } /* grid_1  */
+/* line 25, ../scss/_grid.scss */
+.twocol {
+  width: 14.364640883%;
+}
+
+/* 13.45%; } /* grid_2  */
+/* line 26, ../scss/_grid.scss */
+.threecol {
+  width: 22.928176794%;
+}
+
+/* 22.05%; } /* grid_3  */
+/* line 27, ../scss/_grid.scss */
+.fourcol {
+  width: 31.491712705%;
+}
+
+/* 30.75%; } /* grid_4  */
+/* line 28, ../scss/_grid.scss */
+.fivecol {
+  width: 40.055248616%;
+}
+
+/* 39.45%; } /* grid_5  */
+/* line 29, ../scss/_grid.scss */
+.sixcol {
+  width: 48.618784527%;
+}
+
+/* 48%;    } /* grid_6  */
+/* line 30, ../scss/_grid.scss */
+.sevencol {
+  width: 57.182320438000005%;
+}
+
+/* 56.75%; } /* grid_7  */
+/* line 31, ../scss/_grid.scss */
+.eightcol {
+  width: 65.74585634900001%;
+}
+
+/* 65.4%;  } /* grid_8  */
+/* line 32, ../scss/_grid.scss */
+.ninecol {
+  width: 74.30939226%;
+}
+
+/* 74.05%; } /* grid_9  */
+/* line 33, ../scss/_grid.scss */
+.tencol {
+  width: 82.87292817100001%;
+}
+
+/* 82.7%;  } /* grid_10 */
+/* line 34, ../scss/_grid.scss */
+.elevencol {
+  width: 91.436464082%;
+}
+
+/* 91.35%; } /* grid_11 */
+/* line 35, ../scss/_grid.scss */
+.twelvecol {
+  width: 99.999999993%;
+}
+
+/* 100%;   } /* grid_12 */
+/* line 38, ../scss/_grid.scss */
+.onecol, .twocol, .threecol, .fourcol, .fivecol, .sixcol, .sevencol, .eightcol, .ninecol, .tencol, .elevencol, .twelvecol {
+  position: relative;
+  float: left;
+  margin-left: 2.762430939%;
+}
+
+/* line 44, ../scss/_grid.scss */
+.first {
+  margin-left: 0;
+}
+
+/* line 48, ../scss/_grid.scss */
+.last {
+  float: right;
+}
+
+/******************************************************************
+Site Name:
+Author:
+
 Stylesheet: Base Mobile Stylesheet
 
 Be light and don't over style since everything here will be
@@ -1432,61 +1543,66 @@ FOOTER STYLES
   clear: both;
 }
 
-/* line 14, ../scss/style.scss */
+/* line 15, ../scss/style.scss */
 html, body {
   height: 100%;
 }
 
-/* line 18, ../scss/style.scss */
+/* line 19, ../scss/style.scss */
 body {
   background: #444;
   font-size: 0.9em;
   color: white;
 }
 
-/* line 24, ../scss/style.scss */
+/* line 25, ../scss/style.scss */
+img {
+  max-width: 100%;
+}
+
+/* line 29, ../scss/style.scss */
 ul {
   list-style-type: none;
   margin: 0;
   width: 100%;
 }
 
-/* line 30, ../scss/style.scss */
+/* line 35, ../scss/style.scss */
 .wrap {
   margin-top: 30px;
+  padding-bottom: 30px;
   width: 100%;
   max-width: 800px;
 }
 
-/* line 36, ../scss/style.scss */
+/* line 42, ../scss/style.scss */
 .puzzle {
-  width: 100%;
   margin: 0 auto;
   height: 700px;
   background: #fff;
   border: 10px solid #ddd;
 }
 
-/* line 44, ../scss/style.scss */
+/* line 49, ../scss/style.scss */
 .controls {
   width: 100%;
 }
-/* line 47, ../scss/style.scss */
+/* line 52, ../scss/style.scss */
 .controls li {
   display: inline;
 }
 
-/* line 52, ../scss/style.scss */
+/* line 57, ../scss/style.scss */
 .sortable {
   border-bottom: 10px solid #ddd;
   height: 100%;
   padding: 0;
 }
-/* line 56, ../scss/style.scss */
+/* line 61, ../scss/style.scss */
 .sortable:last-child {
   border-bottom: 0;
 }
-/* line 60, ../scss/style.scss */
+/* line 65, ../scss/style.scss */
 .sortable li {
   background: #6cbcee;
   border: 1px solid #fff;
@@ -1495,109 +1611,196 @@ ul {
   float: left;
   cursor: pointer;
 }
-/* line 68, ../scss/style.scss */
+/* line 73, ../scss/style.scss */
 .sortable li:hover {
   background: #3ea7e9;
 }
-/* line 72, ../scss/style.scss */
+/* line 77, ../scss/style.scss */
 .sortable li:active {
   background: #1990db;
 }
 
-/* line 79, ../scss/style.scss */
+/* line 84, ../scss/style.scss */
 .top li {
   background: #1990db;
 }
-/* line 81, ../scss/style.scss */
+/* line 86, ../scss/style.scss */
 .top li:hover {
   background: #6cbcee;
 }
 
-/* line 86, ../scss/style.scss */
+/* line 91, ../scss/style.scss */
 .second li {
   background: #f01d4f;
   position: relative;
   z-index: 2;
 }
-/* line 90, ../scss/style.scss */
+/* line 95, ../scss/style.scss */
 .second li:hover {
   background: #f67d99;
 }
 
-/* line 95, ../scss/style.scss */
+/* line 100, ../scss/style.scss */
 .third li {
-  position: relative;
-  z-index: 3;
   background: #b4cf49;
 }
-/* line 99, ../scss/style.scss */
+/* line 102, ../scss/style.scss */
 .third li:hover {
   background: #d5e49a;
 }
 
-/* line 104, ../scss/style.scss */
+/* line 107, ../scss/style.scss */
 .fourth li {
   position: relative;
   z-index: 4;
   background: #acca35;
 }
-/* line 108, ../scss/style.scss */
+/* line 111, ../scss/style.scss */
 .fourth li:hover {
   background: #cddf85;
 }
 
-/* line 113, ../scss/style.scss */
+/* line 116, ../scss/style.scss */
 .before {
   background: #d5e49a !important;
 }
 
-/* line 117, ../scss/style.scss */
+/* line 120, ../scss/style.scss */
 .after {
   background: #f5b6b9 !important;
 }
 
-/* line 121, ../scss/style.scss */
+/* line 124, ../scss/style.scss */
 .kudos {
   margin-top: 5em;
   display: none;
 }
 
 /* line 134, ../scss/style.scss */
+.selectors {
+  background: white;
+  padding: 1em;
+}
+/* line 138, ../scss/style.scss */
+.selectors .draggable {
+  padding: 0;
+}
+/* line 141, ../scss/style.scss */
+.selectors .draggable li {
+  position: relative;
+  z-index: 999;
+  width: 60px;
+  max-width: 100%;
+  padding: 1em 0;
+  margin: 1em 0;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* line 154, ../scss/style.scss */
+#selectors1 .puzzle {
+  background: #eee;
+}
+/* line 156, ../scss/style.scss */
+#selectors1 .puzzle .droppable {
+  padding: 1em;
+  border: 1px solid #999;
+}
+
+/* line 162, ../scss/style.scss */
+.girly {
+  -webkit-box-shadow: 0 0 3px #f01d4f;
+  -moz-box-shadow: 0 0 3px #f01d4f;
+  -ms-box-shadow: 0 0 3px #f01d4f;
+  -o-box-shadow: 0 0 3px #f01d4f;
+  -box-shadow: 0 0 3px #f01d4f;
+  box-shadow: 0 0 3px #f01d4f;
+  background-color: #faacbf;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f01d4f), to(#faacbf));
+  background-image: -webkit-linear-gradient(top, #f01d4f, #faacbf);
+  background-image: -moz-linear-gradient(top, #f01d4f, #faacbf);
+  background-image: -o-linear-gradient(top, #f01d4f, #faacbf);
+  background-image: linear-gradient(to bottom, #f01d4f, #faacbf);
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  -border-radius: 10px;
+  border-radius: 10px;
+  font-family: "DroidSerifItalic", Cambria, Times New Roman, Times, serif;
+  font-size: 1.2em;
+  letter-spacing: 2px;
+}
+
+/* line 171, ../scss/style.scss */
+.boyish {
+  background: #1C5446;
+  border: 3px solid #47AC39;
+}
+
+/* line 176, ../scss/style.scss */
+.woody {
+  background: url("../img/tileable_wood_texture.png");
+}
+
+/* line 180, ../scss/style.scss */
+.text-style1 {
+  color: white;
+  text-shadow: 1px 1px 3px #47AC39;
+}
+
+/* line 185, ../scss/style.scss */
+.title-text {
+  color: #362C12;
+  font-family: "DroidSerifBold", Cambria, Times New Roman, Times, serif;
+  font-size: 2em;
+  line-height: 0;
+}
+
+/* line 192, ../scss/style.scss */
+.error {
+  text-transform: uppercase;
+  color: red;
+  font-family: "OpenSansBold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.25em;
+}
+
+/* line 205, ../scss/style.scss */
 .whole-horiz {
   width: 99.9%;
 }
 
-/* line 138, ../scss/style.scss */
+/* line 209, ../scss/style.scss */
 .whole-vert {
   height: 99.9%;
 }
 
-/* line 142, ../scss/style.scss */
+/* line 213, ../scss/style.scss */
 .half-horiz {
   width: 49.95%;
 }
 
-/* line 146, ../scss/style.scss */
+/* line 217, ../scss/style.scss */
 .half-vert {
   height: 49.95%;
 }
 
-/* line 150, ../scss/style.scss */
+/* line 221, ../scss/style.scss */
 .fourth-horiz {
   width: 24.975%;
 }
 
-/* line 154, ../scss/style.scss */
+/* line 225, ../scss/style.scss */
 .fourth-vert {
   height: 24.975%;
 }
 
-/* line 158, ../scss/style.scss */
+/* line 229, ../scss/style.scss */
 .eighth-horiz {
   width: 12.4875%;
 }
 
-/* line 162, ../scss/style.scss */
+/* line 233, ../scss/style.scss */
 .eighth-vert {
   height: 12.4875%;
 }
