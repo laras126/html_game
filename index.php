@@ -1,10 +1,20 @@
 <?php include('parts/header.php'); ?>
 
 	<div id="puzzle1">
+
 		<h1>Puzzle 1</h1>
 		<p>Arrange all of the blue boxes into the white square.</p>
+		<span class="button" id="floatRight">float:right</span>
+		<span class="button" id="floatLeft">float:left</span>
+		<br />
+		<span class="blue-button" id="posAbs">absolute</span>
+		<span class="blue-button" id="posFix">fixed</span>
+		<span class="blue-button" id="posRel">relative</span>
+		<span class="blue-button" id="posStat">static</span>
+		<br />
 		<span class="blue-button" id="reset">Reset</span>
 		<span class="button" id="done">Done!</span>
+
 		<div class="puzzle clearfix">
 		
 			<ul class="sortable clearfix">

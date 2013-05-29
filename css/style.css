@@ -1608,7 +1608,7 @@ ul {
   border: 1px solid #fff;
   margin: 0;
   padding: 10px;
-  float: left;
+  float: right;
   cursor: pointer;
 }
 /* line 73, ../scss/style.scss */
@@ -1676,16 +1676,16 @@ ul {
   display: none;
 }
 
-/* line 134, ../scss/style.scss */
+/* line 136, ../scss/style.scss */
 .selectors {
   background: white;
   padding: 1em;
 }
-/* line 138, ../scss/style.scss */
+/* line 140, ../scss/style.scss */
 .selectors .draggable {
   padding: 0;
 }
-/* line 141, ../scss/style.scss */
+/* line 143, ../scss/style.scss */
 .selectors .draggable li {
   position: relative;
   z-index: 999;
@@ -1697,17 +1697,17 @@ ul {
   cursor: pointer;
 }
 
-/* line 154, ../scss/style.scss */
+/* line 156, ../scss/style.scss */
 #selectors1 .puzzle {
   background: #eee;
 }
-/* line 156, ../scss/style.scss */
+/* line 158, ../scss/style.scss */
 #selectors1 .puzzle .droppable {
   padding: 1em;
   border: 1px solid #999;
 }
 
-/* line 162, ../scss/style.scss */
+/* line 164, ../scss/style.scss */
 .girly {
   -webkit-box-shadow: 0 0 3px #f01d4f;
   -moz-box-shadow: 0 0 3px #f01d4f;
@@ -1732,24 +1732,24 @@ ul {
   letter-spacing: 2px;
 }
 
-/* line 171, ../scss/style.scss */
+/* line 173, ../scss/style.scss */
 .boyish {
   background: #1C5446;
   border: 3px solid #47AC39;
 }
 
-/* line 176, ../scss/style.scss */
+/* line 178, ../scss/style.scss */
 .woody {
   background: url("../img/tileable_wood_texture.png");
 }
 
-/* line 180, ../scss/style.scss */
+/* line 182, ../scss/style.scss */
 .text-style1 {
   color: white;
   text-shadow: 1px 1px 3px #47AC39;
 }
 
-/* line 185, ../scss/style.scss */
+/* line 187, ../scss/style.scss */
 .title-text {
   color: #362C12;
   font-family: "DroidSerifBold", Cambria, Times New Roman, Times, serif;
@@ -1757,7 +1757,7 @@ ul {
   line-height: 0;
 }
 
-/* line 192, ../scss/style.scss */
+/* line 194, ../scss/style.scss */
 .error {
   text-transform: uppercase;
   color: red;
@@ -1765,42 +1765,42 @@ ul {
   font-size: 1.25em;
 }
 
-/* line 205, ../scss/style.scss */
+/* line 209, ../scss/style.scss */
 .whole-horiz {
   width: 99.9%;
 }
 
-/* line 209, ../scss/style.scss */
+/* line 213, ../scss/style.scss */
 .whole-vert {
   height: 99.9%;
 }
 
-/* line 213, ../scss/style.scss */
+/* line 217, ../scss/style.scss */
 .half-horiz {
   width: 49.95%;
 }
 
-/* line 217, ../scss/style.scss */
+/* line 221, ../scss/style.scss */
 .half-vert {
   height: 49.95%;
 }
 
-/* line 221, ../scss/style.scss */
+/* line 225, ../scss/style.scss */
 .fourth-horiz {
   width: 24.975%;
 }
 
-/* line 225, ../scss/style.scss */
+/* line 229, ../scss/style.scss */
 .fourth-vert {
   height: 24.975%;
 }
 
-/* line 229, ../scss/style.scss */
+/* line 233, ../scss/style.scss */
 .eighth-horiz {
   width: 12.4875%;
 }
 
-/* line 233, ../scss/style.scss */
+/* line 237, ../scss/style.scss */
 .eighth-vert {
   height: 12.4875%;
 }

@@ -11,14 +11,19 @@
 		<section class="clearfix">
 
 			<div class="selectors threecol first">
-				<ul class="draggable">
+				<ul class="draggable" id="selectable">
 					<li class="boyish">.boyish</li>
 					<li class="girly">.girly</li>
 					<li class="woody">.woody</li>
 					<li class="error">.error</li>
 					<li class="title-text">.title</li>
 					<li class="alert-help">.alert-help</li>
-					<li id="threedee">#threedee</li>
+				</ul>
+
+				<ul class="draggable">
+					<li id="">#threedee</li>
+					<li id="">#threedee</li>
+					<li id="">#threedee</li>
 				</ul>
 			</div>
 
@@ -34,7 +39,7 @@
 					</div>
 				</div>
 				<div class="clearfix droppable">
-					<h3>	Lyrics to Wild Ones by Flo Rida and Sia</h3>
+					<h3>Lyrics to Wild Ones by Flo Rida and Sia</h3>
 					<p>Hey I heard you were a wild one<br/>Oooh<br />
 					If I took you home<br />
 					It'd be a home run<br />

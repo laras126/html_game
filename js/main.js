@@ -3,15 +3,21 @@ $(document).ready(function() {
 
 	// jQuery UI widgets
 
-    $('.sortable').sortable({
-		revert: true
+ //    $('.sortable').sortable({
+	// 	revert: true
+	// });
+	
+	// Possible solution
+	// http://stackoverflow.com/questions/705250/is-there-a-jquery-plugin-which-combines-draggable-and-selectable
+
+	$('.sortable li').draggable({
+		//helper: "clone",
+		//stack: ".draggable li",
+		scroll: true,
+		snap: true
 	});
-	$('.draggable li').draggable({
-		helper: "clone",
-		stack: ".draggable li",
-		scroll: true
-	})
-	.selectable();
+
+	$('.draggable').selectable();
 
 	$('.droppable').droppable({
       drop: function( event, ui ) {
@@ -34,20 +40,6 @@ $(document).ready(function() {
 	}
 	);*/
 
-	var element = $('.container');
-	setInterval(function(){
-		// Doesn't work!
-		if( element.offsetHeight < element.scrollHeight || element.offsetWidth < element.scrollWidth){
-			// element has overflow
-			console.log('overflow');
-		}
-		else { 
-		  // element doesn't have overflow
-		  console.log('all good!');
-		}
-	}, 1000);
-
-
 	
 	// Button actions
 
@@ -69,6 +61,30 @@ $(document).ready(function() {
 
 	$('#reset').click(function(){
 		location.reload();
+	});
+
+	$('#floatLeft').click(function(){
+		$('.sortable li').css('float', 'left');
+	});
+
+	$('#posAbs').click(function(){
+		$('.sortable li').css('position', 'absolute');
+	});
+
+	$('#posFix').click(function(){
+		$('.sortable li').css('position', 'fixed');
+	});
+
+	$('#posRel').click(function(){
+		$('.sortable li').css('position', 'relative');
+	});
+
+	$('#posStat').click(function(){
+		$('.sortable li').css('position', 'static');
+	});
+
+	$('#floatRight').click(function(){
+		$('.sortable li').css('float', 'right');
 	});
 
 	$('#done').click(function(){
