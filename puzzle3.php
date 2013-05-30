@@ -4,7 +4,7 @@
 		<h1>Puzzle 3</h1>
 		<p>Arrange all of the blue boxes into the white square, the pink boxes into the blue boxes, and the green boxes into the pink boxes.</p>
 		<a class="blue-button" id="back" href="puzzle2.php">&larr;Back</a>
-		<span class="blue-button" id="reset">Reset</span>
+		<span class="blue-button" id="reload">Reset</span>
 		<span class="button" id="done">Done!</span>
 		
 		<div class="puzzle clearfix">

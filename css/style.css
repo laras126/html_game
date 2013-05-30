@@ -234,7 +234,7 @@ kbd,
 pre,
 samp {
   font-family: monospace, serif;
-  _font-family: 'courier new', monospace;
+  _font-family: "courier new", monospace;
   font-size: 1em;
 }
 
@@ -385,7 +385,7 @@ form {
  */
 /* line 372, ../scss/_normalize.scss */
 fieldset {
-  border: 1px solid #c0c0c0;
+  border: 1px solid silver;
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em;
 }
@@ -646,7 +646,7 @@ http://simplebits.com/notebook/2008/08/14/ampersands-2/
 */
 /* line 145, ../scss/_mixins.scss */
 span.amp {
-  font-family: Baskerville,'Goudy Old Style',Palatino,'Book Antiqua',serif !important;
+  font-family: Baskerville, "Goudy Old Style", Palatino, "Book Antiqua", serif !important;
   font-style: italic;
 }
 
@@ -744,7 +744,7 @@ BUTTONS
   border: 1px solid #be0d37;
   border-top-color: #db0f3f;
   border-left-color: #db0f3f;
-  padding: 4px 12px;
+  padding: 2px 6px;
   color: white;
   display: inline-block;
   font-size: 11px;
@@ -752,7 +752,7 @@ BUTTONS
   text-decoration: none;
   text-shadow: 0 1px rgba(0, 0, 0, 0.75);
   cursor: pointer;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   line-height: 21px;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
@@ -1081,9 +1081,9 @@ BUTTONS
   -moz-border-radius: 15px;
   -webkit-border-radius: 15px;
   border-radius: 15px;
-  box-shadow: 2px 2px 5px #000;
-  -moz-box-shadow: 2px 2px 5px #000;
-  -webkit-box-shadow: 2px 2px 5px #000;
+  box-shadow: 2px 2px 5px black;
+  -moz-box-shadow: 2px 2px 5px black;
+  -webkit-box-shadow: 2px 2px 5px black;
 }
 
 /* line 22, ../scss/_snippet.scss */
@@ -1103,7 +1103,7 @@ BUTTONS
 
 /* line 25, ../scss/_snippet.scss */
 .snippet-reveal pre.sh_sourceCode {
-  padding: .5em 1em;
+  padding: 0.5em 1em;
   text-align: right;
 }
 
@@ -1115,7 +1115,7 @@ BUTTONS
 /* line 27, ../scss/_snippet.scss */
 .snippet-wrap .snippet-no-num {
   list-style: none;
-  padding: .6em 1em;
+  padding: 0.6em 1em;
   margin: 0;
 }
 
@@ -1556,251 +1556,210 @@ body {
 }
 
 /* line 25, ../scss/style.scss */
-img {
-  max-width: 100%;
-}
-
-/* line 29, ../scss/style.scss */
 ul {
   list-style-type: none;
   margin: 0;
   width: 100%;
 }
 
-/* line 35, ../scss/style.scss */
+/* line 31, ../scss/style.scss */
 .wrap {
   margin-top: 30px;
   padding-bottom: 30px;
   width: 100%;
+  height: 100%;
   max-width: 800px;
 }
 
-/* line 42, ../scss/style.scss */
+/* line 39, ../scss/style.scss */
 .puzzle {
   margin: 0 auto;
   height: 700px;
   background: #fff;
-  border: 10px solid #ddd;
+  border: 10px solid #dddddd;
 }
 
-/* line 49, ../scss/style.scss */
-.controls {
-  width: 100%;
-}
-/* line 52, ../scss/style.scss */
-.controls li {
-  display: inline;
-}
-
-/* line 57, ../scss/style.scss */
+/* line 46, ../scss/style.scss */
 .sortable {
-  border-bottom: 10px solid #ddd;
+  border-bottom: 10px solid #dddddd;
   height: 100%;
   padding: 0;
 }
-/* line 61, ../scss/style.scss */
+/* line 51, ../scss/style.scss */
 .sortable:last-child {
   border-bottom: 0;
 }
-/* line 65, ../scss/style.scss */
+/* line 55, ../scss/style.scss */
 .sortable li {
   background: #6cbcee;
-  border: 1px solid #fff;
+  border: 1px solid white;
   margin: 0;
   padding: 10px;
-  float: right;
+  float: left;
   cursor: pointer;
 }
-/* line 73, ../scss/style.scss */
+/* line 63, ../scss/style.scss */
 .sortable li:hover {
   background: #3ea7e9;
 }
-/* line 77, ../scss/style.scss */
+/* line 67, ../scss/style.scss */
 .sortable li:active {
   background: #1990db;
 }
 
-/* line 84, ../scss/style.scss */
+/* line 73, ../scss/style.scss */
+.selected {
+  background: #111111 !important;
+}
+
+/* line 81, ../scss/style.scss */
 .top li {
   background: #1990db;
 }
-/* line 86, ../scss/style.scss */
+/* line 83, ../scss/style.scss */
 .top li:hover {
   background: #6cbcee;
 }
 
-/* line 91, ../scss/style.scss */
+/* line 88, ../scss/style.scss */
 .second li {
   background: #f01d4f;
   position: relative;
   z-index: 2;
 }
-/* line 95, ../scss/style.scss */
+/* line 92, ../scss/style.scss */
 .second li:hover {
   background: #f67d99;
 }
 
-/* line 100, ../scss/style.scss */
+/* line 97, ../scss/style.scss */
 .third li {
   background: #b4cf49;
 }
-/* line 102, ../scss/style.scss */
+/* line 99, ../scss/style.scss */
 .third li:hover {
   background: #d5e49a;
 }
 
-/* line 107, ../scss/style.scss */
+/* line 104, ../scss/style.scss */
 .fourth li {
   position: relative;
   z-index: 4;
   background: #acca35;
 }
-/* line 111, ../scss/style.scss */
+/* line 108, ../scss/style.scss */
 .fourth li:hover {
   background: #cddf85;
 }
 
-/* line 116, ../scss/style.scss */
+/* line 113, ../scss/style.scss */
 .before {
   background: #d5e49a !important;
 }
 
-/* line 120, ../scss/style.scss */
+/* line 117, ../scss/style.scss */
 .after {
   background: #f5b6b9 !important;
 }
 
-/* line 124, ../scss/style.scss */
+/* line 121, ../scss/style.scss */
 .kudos {
   margin-top: 5em;
   display: none;
 }
 
-/* line 136, ../scss/style.scss */
-.selectors {
-  background: white;
-  padding: 1em;
-}
-/* line 140, ../scss/style.scss */
-.selectors .draggable {
-  padding: 0;
-}
-/* line 143, ../scss/style.scss */
-.selectors .draggable li {
-  position: relative;
-  z-index: 999;
-  width: 60px;
-  max-width: 100%;
-  padding: 1em 0;
-  margin: 1em 0;
-  text-align: center;
-  cursor: pointer;
-}
-
-/* line 156, ../scss/style.scss */
-#selectors1 .puzzle {
-  background: #eee;
-}
-/* line 158, ../scss/style.scss */
-#selectors1 .puzzle .droppable {
-  padding: 1em;
-  border: 1px solid #999;
-}
-
-/* line 164, ../scss/style.scss */
-.girly {
-  -webkit-box-shadow: 0 0 3px #f01d4f;
-  -moz-box-shadow: 0 0 3px #f01d4f;
-  -ms-box-shadow: 0 0 3px #f01d4f;
-  -o-box-shadow: 0 0 3px #f01d4f;
-  -box-shadow: 0 0 3px #f01d4f;
-  box-shadow: 0 0 3px #f01d4f;
-  background-color: #faacbf;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#f01d4f), to(#faacbf));
-  background-image: -webkit-linear-gradient(top, #f01d4f, #faacbf);
-  background-image: -moz-linear-gradient(top, #f01d4f, #faacbf);
-  background-image: -o-linear-gradient(top, #f01d4f, #faacbf);
-  background-image: linear-gradient(to bottom, #f01d4f, #faacbf);
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
-  -border-radius: 10px;
-  border-radius: 10px;
-  font-family: "DroidSerifItalic", Cambria, Times New Roman, Times, serif;
-  font-size: 1.2em;
-  letter-spacing: 2px;
-}
-
-/* line 173, ../scss/style.scss */
-.boyish {
-  background: #1C5446;
-  border: 3px solid #47AC39;
-}
-
-/* line 178, ../scss/style.scss */
-.woody {
-  background: url("../img/tileable_wood_texture.png");
-}
-
-/* line 182, ../scss/style.scss */
-.text-style1 {
-  color: white;
-  text-shadow: 1px 1px 3px #47AC39;
-}
-
-/* line 187, ../scss/style.scss */
-.title-text {
-  color: #362C12;
-  font-family: "DroidSerifBold", Cambria, Times New Roman, Times, serif;
-  font-size: 2em;
-  line-height: 0;
-}
-
-/* line 194, ../scss/style.scss */
-.error {
-  text-transform: uppercase;
-  color: red;
-  font-family: "OpenSansBold", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 1.25em;
-}
-
-/* line 209, ../scss/style.scss */
+/* line 134, ../scss/style.scss */
 .whole-horiz {
   width: 99.9%;
 }
 
-/* line 213, ../scss/style.scss */
+/* line 138, ../scss/style.scss */
 .whole-vert {
   height: 99.9%;
 }
 
-/* line 217, ../scss/style.scss */
+/* line 142, ../scss/style.scss */
 .half-horiz {
   width: 49.95%;
 }
 
-/* line 221, ../scss/style.scss */
+/* line 146, ../scss/style.scss */
 .half-vert {
   height: 49.95%;
 }
 
-/* line 225, ../scss/style.scss */
+/* line 150, ../scss/style.scss */
 .fourth-horiz {
   width: 24.975%;
 }
 
-/* line 229, ../scss/style.scss */
+/* line 154, ../scss/style.scss */
 .fourth-vert {
   height: 24.975%;
 }
 
-/* line 233, ../scss/style.scss */
+/* line 158, ../scss/style.scss */
 .eighth-horiz {
   width: 12.4875%;
 }
 
-/* line 237, ../scss/style.scss */
+/* line 162, ../scss/style.scss */
 .eighth-vert {
   height: 12.4875%;
+}
+
+/* line 172, ../scss/style.scss */
+.controls {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 9;
+  padding: 10px;
+  width: 320px;
+  color: #444;
+  border: 2px solid #444444;
+  background: #e6efc2;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  -border-radius: 5px;
+  border-radius: 5px;
+  margin: 10px;
+}
+/* line 185, ../scss/style.scss */
+.controls div span {
+  float: right;
+  margin-right: 5px;
+}
+
+/* line 193, ../scss/style.scss */
+.pos-puz {
+  height: 100%;
+  padding: 0;
+}
+/* line 197, ../scss/style.scss */
+.pos-puz li {
+  overflow: hidden;
+  background: #ebe16f;
+  width: 200px;
+  height: 200px;
+  border: 2px solid #1990db;
+}
+/* line 206, ../scss/style.scss */
+.pos-puz.content li {
+  color: #444;
+  width: auto;
+  height: auto;
+}
+
+/* line 215, ../scss/style.scss */
+.screen-pos {
+  position: absolute;
+  top: 0;
+  background: #222;
+  color: #fefefe;
+  padding: 5px;
+  font-size: 0.9em;
+  right: 0;
 }

@@ -3,19 +3,20 @@ $(document).ready(function() {
 
 	// jQuery UI widgets
 
- //    $('.sortable').sortable({
-	// 	revert: true
-	// });
-	
+    $('.sortable').sortable({
+		revert: true
+	});
+
 	// Possible solution
 	// http://stackoverflow.com/questions/705250/is-there-a-jquery-plugin-which-combines-draggable-and-selectable
 
-	$('.sortable li').draggable({
+	$('.pos-puz li').draggable({
 		//helper: "clone",
-		//stack: ".draggable li",
+		stack: ".pos-puz li",
 		scroll: true,
-		snap: true
-	});
+		//snap: true,
+		//containment: 'parent'
+	}).resizable();
 
 	$('.draggable').selectable();
 
@@ -29,68 +30,174 @@ $(document).ready(function() {
     $('ul, li').disableSelection();
 
 	
-    // Show the previous and next divs when hovered over
-	/*$('.sortable li').hover(function(){
-		$(this).prev().addClass('before');
-		$(this).next().addClass('after');
-	}, function() {
-		$('.sortable li').each(function(){
-			$(this).removeClass('before after');
-		});
-	}
-	);*/
 
-	
 	// Button actions
 
-	var obj = { 'whole-horiz':'width:100%', 
-				'whole-vert':'height:100%', 
-				'half-horiz':'width:50%',
-				'half-vert':'height:50%',
-				'fourth-horiz':'width:25%',
-				'fourth-vert':'height:25%',
-				'eighth-horiz':'width:12.5%',
-				'eighth-vert':'height:12.5%',
-			};
+	var piece = '.pos-puz li';
 
- 	$('#showSizes').click(function(){
-		$.each(obj, function(i, val) {
-			$("." + i).append(val+'<br />');
-    	});
- 	});
 
-	$('#reset').click(function(){
-		location.reload();
-	});
+	// Change the float value 
 
 	$('#floatLeft').click(function(){
-		$('.sortable li').css('float', 'left');
-	});
-
-	$('#posAbs').click(function(){
-		$('.sortable li').css('position', 'absolute');
-	});
-
-	$('#posFix').click(function(){
-		$('.sortable li').css('position', 'fixed');
-	});
-
-	$('#posRel').click(function(){
-		$('.sortable li').css('position', 'relative');
-	});
-
-	$('#posStat').click(function(){
-		$('.sortable li').css('position', 'static');
+		$('.floats span').removeClass('selected');
+		$(piece).css('float', 'left');
+		$(this).addClass('selected');
 	});
 
 	$('#floatRight').click(function(){
-		$('.sortable li').css('float', 'right');
+		$('.floats span').removeClass('selected');
+		$(piece).css('float', 'right');
+		$(this).addClass('selected');
+	});
+
+	$('#clear').click(function(){
+		$('.floats span').removeClass('selected');
+		$(piece).css('float', 'none');
+		$(this).addClass('selected');
+	});
+
+
+	var marginActive = false;
+	var paddingActive = false;
+
+
+	// Add margin/padding
+
+	$('#addMargin').click(function(){
+		$('.box-model span').removeClass('selected');
+		marginActive = true;
+		checkState();
+		console.log(marginActive);
+	});
+	
+	$('#removeMargin').click(function(){
+		marginActive = false;
+		return marginActive;
+		checkState();
+		console.log(marginActive + 'asdasd');
+	});
+
+	$('#addPadding').click(function(){
+		$('.box-model span').removeClass('selected');
+		$(piece).css('padding', '10px');
+
+		$(this).addClass('selected');
+		$(this).text('remove padding').attr('id','paddingActive');
+	});
+
+	$('#contentBox').click(function(){
+		$('.box-sizing span').removeClass('selected');
+		$(piece).css('box-sizing', 'content-box');
+		$(this).addClass('selected');
+	});
+
+	$('#borderBox').click(function(){
+		$('.box-sizing span').removeClass('selected');
+		$(piece).css('box-sizing', 'border-box');
+		$(this).addClass('selected');
+	});
+
+
+
+	function checkState() {
+		if(marginActive==true) {
+			$('#addMargin').addClass('selected').attr('id', 'removeMargin');
+			$(piece).css('margin', '10px');
+		} 
+
+		if (marginActive==false) {
+			$('#removeMargin').removeClass('selected').attr('id', 'addMargin');
+			$(piece).css('margin', '0');
+		}
+	}
+
+
+
+	// Positioning
+
+	$('#posAbs').click(function(){
+		resetPos('absolute');
+		$(this).addClass('selected');
+	});
+
+	$('#posFix').click(function(){
+		resetPos('fixed');
+		$(this).addClass('selected');
+	});
+
+	$('#posRel').click(function(){
+		resetPos('relative');
+		$(this).addClass('selected');
+	});
+
+	$('#posStat').click(function(){
+		resetPos('static');
+		$(this).addClass('selected');
+	});
+
+
+
+	// Display
+
+	$('#disInline').click(function(){
+		resetDis('inline');
+		$(this).addClass('selected');
+	});
+
+	$('#disBlock').click(function(){
+		resetDis('block');
+		$(this).addClass('selected');
+	});
+
+	$('#disInlBlock').click(function(){
+		resetDis('inline-block');
+		$(this).addClass('selected');
+	});
+
+
+
+	// Utilities
+	$('#reset').click(function(){
+		resetCoords();
+	});
+
+	$('#reload').click(function(){
+		location.reload();
 	});
 
 	$('#done').click(function(){
 		$('.puzzle').fadeOut(200);
 		$('.kudos').fadeIn(200);
 	});
+
+
+
+
+
+
+
+	function resetPos(pos) {
+		$('.positions span').removeClass('selected');
+		$(piece).css({
+			position: pos
+		});
+	}
+
+	function resetDis(dis) {
+		$('.display span').removeClass('selected');
+		$(piece).css({
+			display: dis
+		});
+	}
+
+	function resetCoords() {
+		$(piece).css({
+			top: '0',
+			right: '0',
+			bottom: '0',
+			left: '0'
+		});
+	}
 
 });
 
